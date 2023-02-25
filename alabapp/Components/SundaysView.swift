@@ -18,15 +18,17 @@ struct SundaysView: View {
                 ZStack (alignment: .trailing) {
                     Capsule()
                         .frame(width: 325, height: 54)
-                        .foregroundColor(Color(red: 0.54, green: 0.75, blue: 0.90, opacity: 0.80))
+                        .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
                     Text("Boston")
                         .offset(x: -30)
+                        .foregroundColor(Color(red: 0.741, green: 0.741, blue: 0.741))
                 }
                 ZStack {
                     Capsule()
                         .frame(width:145, height:50)
                         .foregroundColor(.white)
                     Text("NYC")
+                        .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                 }
                 .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
                 .offset(x: 2)
@@ -57,16 +59,18 @@ struct SundaysView: View {
                 ZStack {
                     Capsule()
                         .frame(width:130, height:51)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                     Text("Stream: Feb 19")
                         .font(.caption)
+                        .foregroundColor(Color.white)
                 }
                 ZStack {
                     Capsule()
                         .frame(width:130, height:51)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
                     Text("Watch: Feb 12")
                         .font(.caption)
+                        .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                 }
             }
         }

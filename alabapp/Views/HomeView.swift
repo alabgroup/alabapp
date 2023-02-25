@@ -28,7 +28,7 @@ struct HomeView: View {
                         .frame(width: 361, height: 0, alignment: .topLeading)
                         .offset(x: 10, y: -100.50)
                     
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 30) {
                         
                         AnnouncementsView()
                         ContactView()
