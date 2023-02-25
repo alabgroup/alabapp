@@ -24,7 +24,7 @@ struct ContactView: View {
                     .foregroundColor(.black)
                 Text("Email")
                     .font(.subheadline)
-                Image(systemName:"phone")
+                Image(systemName: "phone")
                     .foregroundColor(.black)
                 Text("Phone")
                     .font(.subheadline)
