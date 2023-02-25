@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SundaysView: View {
     var body: some View {
-        VStack (spacing: 12) {
+        VStack (spacing: 14) {
             Text("Sundays")
                 .fontWeight(.medium)
                 .font(.title)
@@ -17,14 +17,14 @@ struct SundaysView: View {
             ZStack (alignment: .leading) {
                 ZStack (alignment: .trailing) {
                     Capsule()
-                        .frame(width: 325, height: 44)
+                        .frame(width: 325, height: 54)
                         .foregroundColor(Color(red: 0.54, green: 0.75, blue: 0.90, opacity: 0.80))
                     Text("Boston")
                         .offset(x: -30)
                 }
                 ZStack {
                     Capsule()
-                        .frame(width:145, height:40)
+                        .frame(width:145, height:50)
                         .foregroundColor(.white)
                     Text("NYC")
                 }

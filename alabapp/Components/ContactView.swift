@@ -9,29 +9,39 @@ import SwiftUI
 
 struct ContactView: View {
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 2) {
             Text("Contact")
                 .font(.title)
-                .fontWeight(.bold)
-                .padding(.bottom, 10)
+                .fontWeight(.medium)
+                .padding(.bottom, 2)
                 Divider()
-            HStack{
-                Image(systemName: "message")
-                    .foregroundColor(.black)
-                Text("Chat")
-                    .font(.subheadline)
-                Image(systemName: "envelope")
-                    .foregroundColor(.black)
-                Text("Email")
-                    .font(.subheadline)
-                Image(systemName: "phone")
-                    .foregroundColor(.black)
-                Text("Phone")
-                    .font(.subheadline)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            HStack {
+                Spacer()
+                HStack {
+                    Image(systemName: "message")
+                        .foregroundColor(.black)
+                    Text("Chat")
+                        .font(.subheadline)
+                }
+                Spacer()
+                HStack {
+                    Image(systemName: "envelope")
+                        .foregroundColor(.black)
+                    Text("Email")
+                        .font(.subheadline)
+                }
+                Spacer()
+                HStack {
+                    Image(systemName: "phone")
+                        .foregroundColor(.black)
+                    Text("Phone")
+                        .font(.subheadline)
+                }
+                Spacer()
             }
-            
         }
-        .padding()
+        .frame(width: 325)
     }
 }
     
