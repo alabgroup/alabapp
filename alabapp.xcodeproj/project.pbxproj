@@ -52,7 +52,7 @@
 		C82046B729B0621B0081BC3C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		C82046B929B062320081BC3C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		C82046BB29B06BDF0081BC3C /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		C8228AA329AABDB500FB4FE7 /* SundaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundaysView.swift; sourceTree = "<group>"; };
+		C8228AA329AABDB500FB4FE7 /* SundaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundaysView.swift; sourceTree = "<group>"; }
 		C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
 		C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailedView.swift; sourceTree = "<group>"; };
