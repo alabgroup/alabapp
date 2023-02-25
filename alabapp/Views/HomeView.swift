@@ -67,6 +67,9 @@ struct HomeView: View {
                         .cornerRadius(8)
                     
                 }
+                
+                ContactView()
+                
                 Text("About Alabaster Group ")
                     .fontWeight(.medium)
                     .font(.title)
