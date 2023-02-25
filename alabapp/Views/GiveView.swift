@@ -9,6 +9,9 @@ import SwiftUI
 
 struct GiveView: View {
     var body: some View {
+        /*VStack{
+            Image(systemName:)
+        }*/
         Text("This is the Give page.")
     }
 }
