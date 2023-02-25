@@ -2,10 +2,11 @@
 //  alabappTests.swift
 //  alabappTests
 //
-//  Created by Joane Joseph on 2/23/23.
+//  Created by Joane Joseph on 2/25/23.
 //
 
 import XCTest
+@testable import alabapp
 
 final class alabappTests: XCTestCase {
 
@@ -27,7 +28,7 @@ final class alabappTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

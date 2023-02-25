@@ -7,62 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F67B2CC029A83865005D1FCB /* alabappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B2CBF29A83865005D1FCB /* alabappApp.swift */; };
-		F67B2CC229A83865005D1FCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B2CC129A83865005D1FCB /* ContentView.swift */; };
-		F67B2CC429A83868005D1FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67B2CC329A83868005D1FCB /* Assets.xcassets */; };
-		F67B2CC829A83868005D1FCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67B2CC729A83868005D1FCB /* Preview Assets.xcassets */; };
-		F67B2CD229A83868005D1FCB /* alabappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B2CD129A83868005D1FCB /* alabappTests.swift */; };
-		F67B2CDC29A83868005D1FCB /* alabappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B2CDB29A83868005D1FCB /* alabappUITests.swift */; };
-		F67B2CDE29A83868005D1FCB /* alabappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B2CDD29A83868005D1FCB /* alabappUITestsLaunchTests.swift */; };
+		F601B83529AA6515002BA869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B83429AA6515002BA869 /* AppDelegate.swift */; };
+		F601B83729AA6515002BA869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B83629AA6515002BA869 /* SceneDelegate.swift */; };
+		F601B83929AA6515002BA869 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B83829AA6515002BA869 /* ViewController.swift */; };
+		F601B83C29AA6515002BA869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F601B83A29AA6515002BA869 /* Main.storyboard */; };
+		F601B83E29AA6518002BA869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F601B83D29AA6518002BA869 /* Assets.xcassets */; };
+		F601B84129AA6518002BA869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F601B83F29AA6518002BA869 /* LaunchScreen.storyboard */; };
+		F601B84C29AA6519002BA869 /* alabappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B84B29AA6519002BA869 /* alabappTests.swift */; };
+		F601B85629AA6519002BA869 /* alabappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B85529AA6519002BA869 /* alabappUITests.swift */; };
+		F601B85829AA6519002BA869 /* alabappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B85729AA6519002BA869 /* alabappUITestsLaunchTests.swift */; };
+		F601B86529AA6551002BA869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601B86429AA6551002BA869 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F67B2CCE29A83868005D1FCB /* PBXContainerItemProxy */ = {
+		F601B84829AA6519002BA869 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F67B2CB429A83865005D1FCB /* Project object */;
+			containerPortal = F601B82929AA6515002BA869 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F67B2CBB29A83865005D1FCB;
+			remoteGlobalIDString = F601B83029AA6515002BA869;
 			remoteInfo = alabapp;
 		};
-		F67B2CD829A83868005D1FCB /* PBXContainerItemProxy */ = {
+		F601B85229AA6519002BA869 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F67B2CB429A83865005D1FCB /* Project object */;
+			containerPortal = F601B82929AA6515002BA869 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F67B2CBB29A83865005D1FCB;
+			remoteGlobalIDString = F601B83029AA6515002BA869;
 			remoteInfo = alabapp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F67B2CBC29A83865005D1FCB /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F67B2CBF29A83865005D1FCB /* alabappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappApp.swift; sourceTree = "<group>"; };
-		F67B2CC129A83865005D1FCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F67B2CC329A83868005D1FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F67B2CC529A83868005D1FCB /* alabapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = alabapp.entitlements; sourceTree = "<group>"; };
-		F67B2CC729A83868005D1FCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F67B2CCD29A83868005D1FCB /* alabappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alabappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F67B2CD129A83868005D1FCB /* alabappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappTests.swift; sourceTree = "<group>"; };
-		F67B2CD729A83868005D1FCB /* alabappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alabappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F67B2CDB29A83868005D1FCB /* alabappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappUITests.swift; sourceTree = "<group>"; };
-		F67B2CDD29A83868005D1FCB /* alabappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F601B83129AA6515002BA869 /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F601B83429AA6515002BA869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F601B83629AA6515002BA869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F601B83829AA6515002BA869 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F601B83B29AA6515002BA869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F601B83D29AA6518002BA869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F601B84029AA6518002BA869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F601B84229AA6518002BA869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F601B84729AA6519002BA869 /* alabappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alabappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F601B84B29AA6519002BA869 /* alabappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappTests.swift; sourceTree = "<group>"; };
+		F601B85129AA6519002BA869 /* alabappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alabappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F601B85529AA6519002BA869 /* alabappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappUITests.swift; sourceTree = "<group>"; };
+		F601B85729AA6519002BA869 /* alabappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F601B86429AA6551002BA869 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F67B2CB929A83865005D1FCB /* Frameworks */ = {
+		F601B82E29AA6515002BA869 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F67B2CCA29A83868005D1FCB /* Frameworks */ = {
+		F601B84429AA6519002BA869 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F67B2CD429A83868005D1FCB /* Frameworks */ = {
+		F601B84E29AA6519002BA869 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,59 +78,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F67B2CB329A83865005D1FCB = {
+		F601B82829AA6515002BA869 = {
 			isa = PBXGroup;
 			children = (
-				F67B2CBE29A83865005D1FCB /* alabapp */,
-				F67B2CD029A83868005D1FCB /* alabappTests */,
-				F67B2CDA29A83868005D1FCB /* alabappUITests */,
-				F67B2CBD29A83865005D1FCB /* Products */,
+				F601B83329AA6515002BA869 /* alabapp */,
+				F601B84A29AA6519002BA869 /* alabappTests */,
+				F601B85429AA6519002BA869 /* alabappUITests */,
+				F601B83229AA6515002BA869 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F67B2CBD29A83865005D1FCB /* Products */ = {
+		F601B83229AA6515002BA869 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F67B2CBC29A83865005D1FCB /* alabapp.app */,
-				F67B2CCD29A83868005D1FCB /* alabappTests.xctest */,
-				F67B2CD729A83868005D1FCB /* alabappUITests.xctest */,
+				F601B83129AA6515002BA869 /* alabapp.app */,
+				F601B84729AA6519002BA869 /* alabappTests.xctest */,
+				F601B85129AA6519002BA869 /* alabappUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F67B2CBE29A83865005D1FCB /* alabapp */ = {
+		F601B83329AA6515002BA869 /* alabapp */ = {
 			isa = PBXGroup;
 			children = (
-				F67B2CBF29A83865005D1FCB /* alabappApp.swift */,
-				F67B2CC129A83865005D1FCB /* ContentView.swift */,
-				F67B2CC329A83868005D1FCB /* Assets.xcassets */,
-				F67B2CC529A83868005D1FCB /* alabapp.entitlements */,
-				F67B2CC629A83868005D1FCB /* Preview Content */,
+				F601B83429AA6515002BA869 /* AppDelegate.swift */,
+				F601B83629AA6515002BA869 /* SceneDelegate.swift */,
+				F601B83829AA6515002BA869 /* ViewController.swift */,
+				F601B83A29AA6515002BA869 /* Main.storyboard */,
+				F601B86429AA6551002BA869 /* ContentView.swift */,
+				F601B83D29AA6518002BA869 /* Assets.xcassets */,
+				F601B83F29AA6518002BA869 /* LaunchScreen.storyboard */,
+				F601B84229AA6518002BA869 /* Info.plist */,
 			);
 			path = alabapp;
 			sourceTree = "<group>";
 		};
-		F67B2CC629A83868005D1FCB /* Preview Content */ = {
+		F601B84A29AA6519002BA869 /* alabappTests */ = {
 			isa = PBXGroup;
 			children = (
-				F67B2CC729A83868005D1FCB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F67B2CD029A83868005D1FCB /* alabappTests */ = {
-			isa = PBXGroup;
-			children = (
-				F67B2CD129A83868005D1FCB /* alabappTests.swift */,
+				F601B84B29AA6519002BA869 /* alabappTests.swift */,
 			);
 			path = alabappTests;
 			sourceTree = "<group>";
 		};
-		F67B2CDA29A83868005D1FCB /* alabappUITests */ = {
+		F601B85429AA6519002BA869 /* alabappUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F67B2CDB29A83868005D1FCB /* alabappUITests.swift */,
-				F67B2CDD29A83868005D1FCB /* alabappUITestsLaunchTests.swift */,
+				F601B85529AA6519002BA869 /* alabappUITests.swift */,
+				F601B85729AA6519002BA869 /* alabappUITestsLaunchTests.swift */,
 			);
 			path = alabappUITests;
 			sourceTree = "<group>";
@@ -132,13 +133,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F67B2CBB29A83865005D1FCB /* alabapp */ = {
+		F601B83029AA6515002BA869 /* alabapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F67B2CE129A83868005D1FCB /* Build configuration list for PBXNativeTarget "alabapp" */;
+			buildConfigurationList = F601B85B29AA6519002BA869 /* Build configuration list for PBXNativeTarget "alabapp" */;
 			buildPhases = (
-				F67B2CB829A83865005D1FCB /* Sources */,
-				F67B2CB929A83865005D1FCB /* Frameworks */,
-				F67B2CBA29A83865005D1FCB /* Resources */,
+				F601B82D29AA6515002BA869 /* Sources */,
+				F601B82E29AA6515002BA869 /* Frameworks */,
+				F601B82F29AA6515002BA869 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -146,69 +147,69 @@
 			);
 			name = alabapp;
 			productName = alabapp;
-			productReference = F67B2CBC29A83865005D1FCB /* alabapp.app */;
+			productReference = F601B83129AA6515002BA869 /* alabapp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F67B2CCC29A83868005D1FCB /* alabappTests */ = {
+		F601B84629AA6519002BA869 /* alabappTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F67B2CE429A83868005D1FCB /* Build configuration list for PBXNativeTarget "alabappTests" */;
+			buildConfigurationList = F601B85E29AA6519002BA869 /* Build configuration list for PBXNativeTarget "alabappTests" */;
 			buildPhases = (
-				F67B2CC929A83868005D1FCB /* Sources */,
-				F67B2CCA29A83868005D1FCB /* Frameworks */,
-				F67B2CCB29A83868005D1FCB /* Resources */,
+				F601B84329AA6519002BA869 /* Sources */,
+				F601B84429AA6519002BA869 /* Frameworks */,
+				F601B84529AA6519002BA869 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F67B2CCF29A83868005D1FCB /* PBXTargetDependency */,
+				F601B84929AA6519002BA869 /* PBXTargetDependency */,
 			);
 			name = alabappTests;
 			productName = alabappTests;
-			productReference = F67B2CCD29A83868005D1FCB /* alabappTests.xctest */;
+			productReference = F601B84729AA6519002BA869 /* alabappTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F67B2CD629A83868005D1FCB /* alabappUITests */ = {
+		F601B85029AA6519002BA869 /* alabappUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F67B2CE729A83868005D1FCB /* Build configuration list for PBXNativeTarget "alabappUITests" */;
+			buildConfigurationList = F601B86129AA6519002BA869 /* Build configuration list for PBXNativeTarget "alabappUITests" */;
 			buildPhases = (
-				F67B2CD329A83868005D1FCB /* Sources */,
-				F67B2CD429A83868005D1FCB /* Frameworks */,
-				F67B2CD529A83868005D1FCB /* Resources */,
+				F601B84D29AA6519002BA869 /* Sources */,
+				F601B84E29AA6519002BA869 /* Frameworks */,
+				F601B84F29AA6519002BA869 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F67B2CD929A83868005D1FCB /* PBXTargetDependency */,
+				F601B85329AA6519002BA869 /* PBXTargetDependency */,
 			);
 			name = alabappUITests;
 			productName = alabappUITests;
-			productReference = F67B2CD729A83868005D1FCB /* alabappUITests.xctest */;
+			productReference = F601B85129AA6519002BA869 /* alabappUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F67B2CB429A83865005D1FCB /* Project object */ = {
+		F601B82929AA6515002BA869 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					F67B2CBB29A83865005D1FCB = {
+					F601B83029AA6515002BA869 = {
 						CreatedOnToolsVersion = 14.2;
 					};
-					F67B2CCC29A83868005D1FCB = {
+					F601B84629AA6519002BA869 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = F67B2CBB29A83865005D1FCB;
+						TestTargetID = F601B83029AA6515002BA869;
 					};
-					F67B2CD629A83868005D1FCB = {
+					F601B85029AA6519002BA869 = {
 						CreatedOnToolsVersion = 14.2;
-						TestTargetID = F67B2CBB29A83865005D1FCB;
+						TestTargetID = F601B83029AA6515002BA869;
 					};
 				};
 			};
-			buildConfigurationList = F67B2CB729A83865005D1FCB /* Build configuration list for PBXProject "alabapp" */;
+			buildConfigurationList = F601B82C29AA6515002BA869 /* Build configuration list for PBXProject "alabapp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,36 +217,37 @@
 				en,
 				Base,
 			);
-			mainGroup = F67B2CB329A83865005D1FCB;
-			productRefGroup = F67B2CBD29A83865005D1FCB /* Products */;
+			mainGroup = F601B82829AA6515002BA869;
+			productRefGroup = F601B83229AA6515002BA869 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F67B2CBB29A83865005D1FCB /* alabapp */,
-				F67B2CCC29A83868005D1FCB /* alabappTests */,
-				F67B2CD629A83868005D1FCB /* alabappUITests */,
+				F601B83029AA6515002BA869 /* alabapp */,
+				F601B84629AA6519002BA869 /* alabappTests */,
+				F601B85029AA6519002BA869 /* alabappUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F67B2CBA29A83865005D1FCB /* Resources */ = {
+		F601B82F29AA6515002BA869 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67B2CC829A83868005D1FCB /* Preview Assets.xcassets in Resources */,
-				F67B2CC429A83868005D1FCB /* Assets.xcassets in Resources */,
+				F601B84129AA6518002BA869 /* LaunchScreen.storyboard in Resources */,
+				F601B83E29AA6518002BA869 /* Assets.xcassets in Resources */,
+				F601B83C29AA6515002BA869 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F67B2CCB29A83868005D1FCB /* Resources */ = {
+		F601B84529AA6519002BA869 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F67B2CD529A83868005D1FCB /* Resources */ = {
+		F601B84F29AA6519002BA869 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,49 +257,70 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F67B2CB829A83865005D1FCB /* Sources */ = {
+		F601B82D29AA6515002BA869 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67B2CC229A83865005D1FCB /* ContentView.swift in Sources */,
-				F67B2CC029A83865005D1FCB /* alabappApp.swift in Sources */,
+				F601B83929AA6515002BA869 /* ViewController.swift in Sources */,
+				F601B83529AA6515002BA869 /* AppDelegate.swift in Sources */,
+				F601B86529AA6551002BA869 /* ContentView.swift in Sources */,
+				F601B83729AA6515002BA869 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F67B2CC929A83868005D1FCB /* Sources */ = {
+		F601B84329AA6519002BA869 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67B2CD229A83868005D1FCB /* alabappTests.swift in Sources */,
+				F601B84C29AA6519002BA869 /* alabappTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F67B2CD329A83868005D1FCB /* Sources */ = {
+		F601B84D29AA6519002BA869 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67B2CDE29A83868005D1FCB /* alabappUITestsLaunchTests.swift in Sources */,
-				F67B2CDC29A83868005D1FCB /* alabappUITests.swift in Sources */,
+				F601B85829AA6519002BA869 /* alabappUITestsLaunchTests.swift in Sources */,
+				F601B85629AA6519002BA869 /* alabappUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F67B2CCF29A83868005D1FCB /* PBXTargetDependency */ = {
+		F601B84929AA6519002BA869 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F67B2CBB29A83865005D1FCB /* alabapp */;
-			targetProxy = F67B2CCE29A83868005D1FCB /* PBXContainerItemProxy */;
+			target = F601B83029AA6515002BA869 /* alabapp */;
+			targetProxy = F601B84829AA6519002BA869 /* PBXContainerItemProxy */;
 		};
-		F67B2CD929A83868005D1FCB /* PBXTargetDependency */ = {
+		F601B85329AA6519002BA869 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F67B2CBB29A83865005D1FCB /* alabapp */;
-			targetProxy = F67B2CD829A83868005D1FCB /* PBXContainerItemProxy */;
+			target = F601B83029AA6515002BA869 /* alabapp */;
+			targetProxy = F601B85229AA6519002BA869 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		F601B83A29AA6515002BA869 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F601B83B29AA6515002BA869 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F601B83F29AA6518002BA869 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F601B84029AA6518002BA869 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		F67B2CDF29A83868005D1FCB /* Debug */ = {
+		F601B85929AA6519002BA869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -347,15 +370,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		F67B2CE029A83868005D1FCB /* Release */ = {
+		F601B85A29AA6519002BA869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -399,100 +424,85 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		F67B2CE229A83868005D1FCB /* Debug */ = {
+		F601B85C29AA6519002BA869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = alabapp/alabapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"alabapp/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = 63JWG7D59H;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_FILE = alabapp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alabastergroup.com.alabapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F67B2CE329A83868005D1FCB /* Release */ = {
+		F601B85D29AA6519002BA869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = alabapp/alabapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"alabapp/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = 63JWG7D59H;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_FILE = alabapp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alabastergroup.com.alabapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		F67B2CE529A83868005D1FCB /* Debug */ = {
+		F601B85F29AA6519002BA869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63JWG7D59H;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alabastergroup.com.alabappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,21 +510,19 @@
 			};
 			name = Debug;
 		};
-		F67B2CE629A83868005D1FCB /* Release */ = {
+		F601B86029AA6519002BA869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63JWG7D59H;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alabastergroup.com.alabappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,20 +530,17 @@
 			};
 			name = Release;
 		};
-		F67B2CE829A83868005D1FCB /* Debug */ = {
+		F601B86229AA6519002BA869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63JWG7D59H;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alabastergroup.com.alabappUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,20 +548,17 @@
 			};
 			name = Debug;
 		};
-		F67B2CE929A83868005D1FCB /* Release */ = {
+		F601B86329AA6519002BA869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63JWG7D59H;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alabastergroup.com.alabappUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -567,43 +569,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F67B2CB729A83865005D1FCB /* Build configuration list for PBXProject "alabapp" */ = {
+		F601B82C29AA6515002BA869 /* Build configuration list for PBXProject "alabapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F67B2CDF29A83868005D1FCB /* Debug */,
-				F67B2CE029A83868005D1FCB /* Release */,
+				F601B85929AA6519002BA869 /* Debug */,
+				F601B85A29AA6519002BA869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F67B2CE129A83868005D1FCB /* Build configuration list for PBXNativeTarget "alabapp" */ = {
+		F601B85B29AA6519002BA869 /* Build configuration list for PBXNativeTarget "alabapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F67B2CE229A83868005D1FCB /* Debug */,
-				F67B2CE329A83868005D1FCB /* Release */,
+				F601B85C29AA6519002BA869 /* Debug */,
+				F601B85D29AA6519002BA869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F67B2CE429A83868005D1FCB /* Build configuration list for PBXNativeTarget "alabappTests" */ = {
+		F601B85E29AA6519002BA869 /* Build configuration list for PBXNativeTarget "alabappTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F67B2CE529A83868005D1FCB /* Debug */,
-				F67B2CE629A83868005D1FCB /* Release */,
+				F601B85F29AA6519002BA869 /* Debug */,
+				F601B86029AA6519002BA869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F67B2CE729A83868005D1FCB /* Build configuration list for PBXNativeTarget "alabappUITests" */ = {
+		F601B86129AA6519002BA869 /* Build configuration list for PBXNativeTarget "alabappUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F67B2CE829A83868005D1FCB /* Debug */,
-				F67B2CE929A83868005D1FCB /* Release */,
+				F601B86229AA6519002BA869 /* Debug */,
+				F601B86329AA6519002BA869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F67B2CB429A83865005D1FCB /* Project object */;
+	rootObject = F601B82929AA6515002BA869 /* Project object */;
 }
