@@ -9,13 +9,17 @@ import SwiftUI
 
 struct SundaysView: View {
     
+    // Attempt to open Youtube if it is installed in the user's
+    // device. Fall back to opening their web browser.
     func openYoutube(youtubeId: String) {
        var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
-        if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+        if UIApplication.shared.canOpenURL(youtubeUrl as URL) {
             UIApplication.shared.open(youtubeUrl as URL)
-       } else{
+       } else {
            youtubeUrl = NSURL(string:"https://www.youtube.com/watch?v=\(youtubeId)")!
-           UIApplication.shared.open(youtubeUrl as URL)}
+           UIApplication.shared.open(youtubeUrl as URL)
+           
+       }
     }
     
     @State var toggleToNewYork = true
@@ -78,7 +82,7 @@ struct SundaysView: View {
                         Capsule()
                             .frame(width:130, height:51)
                             .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
-                        Button(action:{
+                        Button(action: {
                             openYoutube(youtubeId: "McJAL7aaLvs")
                         }) {Text("Stream: Feb 19")
                                 .font(.caption)
