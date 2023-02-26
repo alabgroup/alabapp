@@ -10,11 +10,17 @@ import SwiftUI
 struct EventsView: View {
     var body: some View {
         ScrollView {
-            VStack (spacing: 60) {
+            VStack (spacing: 20) {
+                Text("Events")
+                    .fontWeight(.medium)
+                    .font(.largeTitle)
+                    .frame(width: 325, height: 30, alignment: .center)
+                
                 Text("Happening Now")
                     .fontWeight(.medium)
                     .font(.title)
                     .frame(width: 325, height: 35, alignment: .topLeading)
+                    .padding(.bottom, 40)
                 
                 EventCardView()
                 
