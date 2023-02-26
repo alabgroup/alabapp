@@ -31,7 +31,7 @@ struct EventCardView: View {
                     Capsule()
                         .frame(width: 152, height: 34)
                         .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
-                    NavigationLink(destination: GiveView()) {
+                    NavigationLink(destination: EventDetailedView()) {
                         Text("Learn more")
                             .font(.headline)
                             .foregroundColor(Color.white)

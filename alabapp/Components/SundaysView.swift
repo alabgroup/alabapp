@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SundaysView: View {
+    
+    @State var toggleToNewYork = true
+    
     var body: some View {
         VStack (spacing: 14) {
             Text("Sundays")
@@ -19,35 +22,40 @@ struct SundaysView: View {
                     Capsule()
                         .frame(width: 325, height: 54)
                         .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
+                    Text("NYC")
+                        .offset(x: -234)
+                        .foregroundColor(Color(red: 0.741, green: 0.741, blue: 0.741))
                     Text("Boston")
-                        .offset(x: -30)
+                        .offset(x: -50)
                         .foregroundColor(Color(red: 0.741, green: 0.741, blue: 0.741))
                 }
                 ZStack {
                     Capsule()
                         .frame(width:145, height:50)
                         .foregroundColor(.white)
-                    Text("NYC")
+                    Text(toggleToNewYork ? "NYC" : "Boston")
                         .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                 }
                 .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-                .offset(x: 2)
-                // .padding(24)
+                .offset(x:toggleToNewYork ? 2: 175)
+                .animation(.spring())
             }
-            
+            .onTapGesture {
+                self.toggleToNewYork.toggle()
+            }
             
             VStack(alignment: .leading, spacing: 2) {
                 HStack {
                     Image("building")
-                    Text("141st St & Amsterdam Ave, Manhattan")
+                    Text(toggleToNewYork ? "141st St & Amsterdam Ave, Manhattan" : "929 Mass Ave, Cambridge")
                 }
                 HStack {
                     Image("time")
-                    Text("Service starts at 10:30 AM")
+                    Text(toggleToNewYork ? "Service starts at 10:30 AM" : "Service starts at 4:30 PM")
                 }
                 HStack {
                     Image("personcheck")
-                    Text(" Open to all")
+                    Text(toggleToNewYork ? " Open to all" : " Open to students")
                 }
                 HStack {
                     Image("chat")
@@ -55,24 +63,28 @@ struct SundaysView: View {
                 }
             }
             
-            HStack (spacing: 50){
-                ZStack {
-                    Capsule()
-                        .frame(width:130, height:51)
-                        .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
-                    Text("Stream: Feb 19")
-                        .font(.caption)
-                        .foregroundColor(Color.white)
+            if toggleToNewYork {
+                HStack (spacing: 50) {
+                    ZStack {
+                        Capsule()
+                            .frame(width:130, height:51)
+                            .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
+                        Text("Stream: Feb 19")
+                            .font(.caption)
+                            .foregroundColor(Color.white)
+                    }
+                    ZStack {
+                        Capsule()
+                            .frame(width:130, height:51)
+                            .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
+                        Text("Watch: Feb 12")
+                            .font(.caption)
+                            .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
+                    }
                 }
-                ZStack {
-                    Capsule()
-                        .frame(width:130, height:51)
-                        .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
-                    Text("Watch: Feb 12")
-                        .font(.caption)
-                        .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
-                }
+                
             }
+            
         }
     }
 }
