@@ -9,6 +9,15 @@ import SwiftUI
 
 struct SundaysView: View {
     
+    func openYoutube(youtubeId: String) {
+       var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+        if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+            UIApplication.shared.open(youtubeUrl as URL)
+       } else{
+           youtubeUrl = NSURL(string:"https://www.youtube.com/watch?v=\(youtubeId)")!
+           UIApplication.shared.open(youtubeUrl as URL)}
+    }
+    
     @State var toggleToNewYork = true
     
     var body: some View {
@@ -38,7 +47,7 @@ struct SundaysView: View {
                 }
                 .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
                 .offset(x:toggleToNewYork ? 2: 175)
-                .animation(.spring())
+                .animation(Animation.spring(), value: toggleToNewYork)
             }
             .onTapGesture {
                 self.toggleToNewYork.toggle()
@@ -69,17 +78,22 @@ struct SundaysView: View {
                         Capsule()
                             .frame(width:130, height:51)
                             .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
-                        Text("Stream: Feb 19")
-                            .font(.caption)
-                            .foregroundColor(Color.white)
+                        Button(action:{
+                            openYoutube(youtubeId: "McJAL7aaLvs")
+                        }) {Text("Stream: Feb 19")
+                                .font(.caption)
+                            .foregroundColor(Color.white)}
                     }
                     ZStack {
                         Capsule()
                             .frame(width:130, height:51)
                             .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
-                        Text("Watch: Feb 12")
-                            .font(.caption)
-                            .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
+                        Button(action:{
+                            openYoutube(youtubeId: "oZO2uuRfUuA")
+                        }) {Text("Watch: Feb 12")
+                                .font(.caption)
+                                .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
+                        }
                     }
                 }
                 
