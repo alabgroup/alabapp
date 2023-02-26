@@ -10,6 +10,7 @@
 		00F19ECB29AA89420010932B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F19ECA29AA89420010932B /* ContactView.swift */; };
 		C8228AA429AABDB500FB4FE7 /* SundaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AA329AABDB500FB4FE7 /* SundaysView.swift */; };
 		C8228AA629AABDE300FB4FE7 /* AnnouncementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */; };
+		C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */; };
 		F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35329AA80CA00DDBC45 /* alabappApp.swift */; };
 		F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35529AA80CA00DDBC45 /* ContentView.swift */; };
 		F625B35829AA80CC00DDBC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F625B35729AA80CC00DDBC45 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		00F19ECA29AA89420010932B /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		C8228AA329AABDB500FB4FE7 /* SundaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundaysView.swift; sourceTree = "<group>"; };
 		C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
+		C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		F625B35029AA80CA00DDBC45 /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F625B35329AA80CA00DDBC45 /* alabappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappApp.swift; sourceTree = "<group>"; };
 		F625B35529AA80CA00DDBC45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				C8228AA329AABDB500FB4FE7 /* SundaysView.swift */,
 				C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */,
 				00F19ECA29AA89420010932B /* ContactView.swift */,
+				C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				C8228AA429AABDB500FB4FE7 /* SundaysView.swift in Sources */,
 				F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */,
 				00F19ECB29AA89420010932B /* ContactView.swift in Sources */,
+				C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */,
 				C8228AA629AABDE300FB4FE7 /* AnnouncementsView.swift in Sources */,
 				F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */,
 				F625B38A29AA820800DDBC45 /* HomeView.swift in Sources */,

@@ -9,7 +9,26 @@ import SwiftUI
 
 struct EventsView: View {
     var body: some View {
-        Text("This is the events page.")
+        ScrollView {
+            VStack (spacing: 60) {
+                Text("Happening Now")
+                    .fontWeight(.medium)
+                    .font(.title)
+                    .frame(width: 325, height: 35, alignment: .topLeading)
+                
+                EventCardView()
+                
+            }.padding(.bottom, 50)
+            
+            VStack (spacing: 60) {
+                Text("Upcoming")
+                    .fontWeight(.medium)
+                    .font(.title)
+                    .frame(width: 325, height: 35, alignment: .topLeading)
+                EventCardView()
+                EventCardView()
+            }
+        }
     }
 }
 
