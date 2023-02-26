@@ -26,20 +26,23 @@ struct EventCardView: View {
                     Text ("Hilton Parsippany")
                 }.padding(.leading, 40)
                 
-                // Information button
+                // Learn more button
                 ZStack {
                     Capsule()
                         .frame(width: 152, height: 34)
                         .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
-                    Text("Learn more")
-                        .font(.headline)
-                        .foregroundColor(Color.white)
+                    NavigationLink(destination: GiveView()) {
+                        Text("Learn more")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                    }
                 }.padding(.leading, 40)
             }.background(Rectangle()
                 .fill(Color(red: 0.961, green: 0.961, blue: 0.961))
                 .cornerRadius(8)
                 .frame(width: 325, height: 170)
                 .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 2))
+            
             
             // Event date card
             VStack(alignment: .center) {
@@ -59,6 +62,7 @@ struct EventCardView: View {
             ).offset(x: -25, y: -35)
         }
     }
+    
 }
 
 struct EventCardView_Previews: PreviewProvider {
