@@ -23,6 +23,18 @@ struct ContactView: View {
         }
     }
     
+    // Open the user's email.
+    func openMail() {
+        let email = "support@alab.org"
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+              } else {
+                UIApplication.shared.openURL(url)
+              }
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text("Contact")
@@ -44,11 +56,14 @@ struct ContactView: View {
                     
                 }
                 Spacer()
-                HStack {
-                    Image(systemName: "envelope")
-                        .foregroundColor(.black)
-                    Text("Email")
-                        .font(.subheadline)
+                Button(action: {openMail()}){
+                    HStack {
+                        Image(systemName: "envelope")
+                            .foregroundColor(.black)
+                        Text("Email")
+                            .font(.subheadline)
+                    }
+                    
                 }
                 Spacer()
                 HStack {
