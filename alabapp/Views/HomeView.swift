@@ -33,7 +33,7 @@ struct HomeView: View {
                         AnnouncementsView()
                         ContactView()
                         SundaysView()
-                
+                        
                     }.frame(maxWidth: 325, maxHeight: .infinity)
                 }
             }
