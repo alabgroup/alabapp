@@ -9,7 +9,23 @@ import SwiftUI
 
 struct InfoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack (alignment: .leading, spacing: 10) {
+                Text("Policies")
+                    .font(.title)
+                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
+                
+                Text("More policies")
+                    .font(.title2)
+                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
+                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved.")
+                
+                Text("Even more policies")
+                    .font(.title2)
+                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
+            }.padding(.horizontal, 24)
+        }
+        
     }
 }
 

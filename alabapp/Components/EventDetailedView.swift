@@ -32,7 +32,7 @@ struct EventDetailedView: View {
     
     
     var body: some View {
-        ScrollView {
+     
             ZStack (alignment: .top) {
                 VStack {
                     Image("gospelForumBanner")
@@ -81,9 +81,9 @@ struct EventDetailedView: View {
                     Spacer()
                     
                 }
-            }
-        }.ignoresSafeArea(.all)
-    }
+            }.edgesIgnoringSafeArea(.top)
+        }
+ 
 }
 
 struct EventDetailedView_Previews: PreviewProvider {
