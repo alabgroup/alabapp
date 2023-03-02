@@ -16,20 +16,19 @@ struct EventDetailedView: View {
         case Contact
     }
     
-    @State private var page = Page.Info
+    @State private var currentPage = Page.Info
     
     func pageButton(_ select: Page, _ icon: String, _ title: String) -> some View {
         return Button {
-            page = select
+            currentPage = select
         } label: {
             VStack {
                 Image(systemName: icon)
                 Text(title)
                     .font(.caption)
             } .frame(width: tabW)
-        } .foregroundColor( page == select ? Color.black : Color.gray )
+        } .foregroundColor( currentPage == select ? Color.black : Color.gray )
     }
-    
     
     var body: some View {
      
@@ -65,17 +64,21 @@ struct EventDetailedView: View {
                                 }
                             }
                             
-                            switch page {
-                            case .Info:
+                            TabView (selection: $currentPage) {
+                                
                                 InfoView()
-                            case .Schedule:
+                                    .tag(Page.Info)
                                 ScheduleView()
-                            case .Location:
-                                HomeView()
-                            case .Contact:
-                                ContactView()
+                                    .tag(Page.Schedule)
+                                LocationView()
+                                    .tag(Page.Location)
+                                GiveView()
+                                    .tag(Page.Contact)
+                                
                             }
-                            Spacer()
+                            .tabViewStyle(PageTabViewStyle())
+                            .onChange(of: currentPage) { newValue in
+                                print("New page: \(newValue)")}
                         }
                     }
                     Spacer()
