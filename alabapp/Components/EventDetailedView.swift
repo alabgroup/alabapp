@@ -67,9 +67,9 @@ struct EventDetailedView: View {
                             
                             switch page {
                             case .Info:
-                                SundaysView()
+                                InfoView()
                             case .Schedule:
-                                GiveView()
+                                ScheduleView()
                             case .Location:
                                 HomeView()
                             case .Contact:
