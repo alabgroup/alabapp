@@ -1,0 +1,8 @@
+# Ignore all files with the specified name.
+# Scope is all repo folders.
+
+# Xcode Workplace file for Joane's Workspoace
+alabapp.xcodeproj/project.xcworkspace/xcuserdata/joanejoseph.xcuserdatad/UserInterfaceState.xcuserstate
+
+# Xcode Workplace file for Janet's Workspoace
+alabapp.xcodeproj/project.xcworkspace/xcuserdata/janetcl.xcuserdatad/UserInterfaceState.xcuserstate
