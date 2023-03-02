@@ -23,8 +23,8 @@ struct HomeView: View {
                     
                     Text("Alabaster Group")
                         .fontWeight(.bold)
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .font(MyFont.largeTitle)
+                        .foregroundColor(MyFont.white)
                         .frame(width: 361, height: 0, alignment: .topLeading)
                         .offset(x: 10, y: -100.50)
                     

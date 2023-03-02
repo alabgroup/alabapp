@@ -27,8 +27,8 @@ struct SundaysView: View {
     var body: some View {
         VStack (spacing: 14) {
             Text("Sundays")
-                .fontWeight(.medium)
-                .font(.title)
+                .font(MyFont.title)
+                .foregroundColor(MyFont.black)
                 .frame(width: 325, height: 35, alignment: .topLeading)
             ZStack (alignment: .leading) {
                 ZStack (alignment: .trailing) {
@@ -37,10 +37,12 @@ struct SundaysView: View {
                         .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
                     Text("NYC")
                         .offset(x: -234)
-                        .foregroundColor(Color(red: 0.741, green: 0.741, blue: 0.741))
+                        .font(MyFont.headline)
+                        .foregroundColor(MyFont.darkBlue)
                     Text("Boston")
                         .offset(x: -50)
-                        .foregroundColor(Color(red: 0.741, green: 0.741, blue: 0.741))
+                        .font(MyFont.subheadline)
+                        .foregroundColor(MyFont.lightGray)
                 }
                 ZStack {
                     Capsule()
@@ -61,18 +63,26 @@ struct SundaysView: View {
                 HStack {
                     Image("building")
                     Text(toggleToNewYork ? "141st St & Amsterdam Ave, Manhattan" : "929 Mass Ave, Cambridge")
+                        .font(MyFont.callout)
+                        .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("time")
                     Text(toggleToNewYork ? "Service starts at 10:30 AM" : "Service starts at 4:30 PM")
+                        .font(MyFont.callout)
+                        .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("personcheck")
                     Text(toggleToNewYork ? " Open to all" : " Open to students")
+                        .font(MyFont.callout)
+                        .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("chat")
                     Text("Contact us to attend in person")
+                        .font(MyFont.callout)
+                        .foregroundColor(MyFont.black)
                 }
             }
             
@@ -85,8 +95,8 @@ struct SundaysView: View {
                         Button(action: {
                             openYoutube(youtubeId: "McJAL7aaLvs")
                         }) {Text("Stream: Feb 19")
-                                .font(.caption)
-                            .foregroundColor(Color.white)}
+                                .font(MyFont.headline)
+                                .foregroundColor(MyFont.white)}
                     }
                     ZStack {
                         Capsule()
@@ -95,8 +105,8 @@ struct SundaysView: View {
                         Button(action:{
                             openYoutube(youtubeId: "oZO2uuRfUuA")
                         }) {Text("Watch: Feb 12")
-                                .font(.caption)
-                                .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
+                                .font(MyFont.headline)
+                                .foregroundColor(MyFont.lightBlue)
                         }
                     }
                 }
