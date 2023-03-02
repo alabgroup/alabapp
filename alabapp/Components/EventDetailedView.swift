@@ -8,6 +8,29 @@
 import SwiftUI
 
 struct EventDetailedView: View {
+    let tabW = CGFloat((UIScreen.main.bounds.width - 48.0) / 4.0)
+    enum Page {
+        case Info
+        case Schedule
+        case Location
+        case Contact
+    }
+    
+    @State private var page = Page.Info
+    
+    func pageButton(_ select: Page, _ icon: String, _ title: String) -> some View {
+        return Button {
+            page = select
+        } label: {
+            VStack {
+                Image(systemName: icon)
+                Text(title)
+                    .font(.caption)
+            } .frame(width: tabW)
+        } .foregroundColor( page == select ? Color.black : Color.gray )
+    }
+    
+    
     var body: some View {
         ScrollView {
             ZStack (alignment: .top) {
@@ -29,37 +52,34 @@ struct EventDetailedView: View {
                     
                     VStack(spacing: 20) {
                         AnnouncementsView()
+                            .padding(.bottom, 6)
                         
-                        NavigationView() {
-                            HStack(spacing: 2) {
-                                Spacer()
-                                VStack (spacing: 2) {
-                                    Image(systemName:"info.bubble")
-                                    Text("Info")
-                                        .font(.caption)
+                        // Navigation bar for Events Tab View
+                        VStack() {
+                            ScrollView(.horizontal) {
+                                HStack() {
+                                    pageButton(Page.Info, "info.bubble", "Info")
+                                    pageButton(Page.Schedule, "calendar", "Schedule")
+                                    pageButton(Page.Location, "mappin", "Location")
+                                    pageButton(Page.Contact, "hand.raised", "Contact")
                                 }
-                                Spacer()
-                                VStack (spacing: 2) {
-                                    Image(systemName:"calendar")
-                                    Text("Schedule")
-                                        .font(.caption)
-                                }
-                                Spacer()
-                                VStack (spacing: 2) {
-                                    Image(systemName:"mappin")
-                                    Text("Location")
-                                        .font(.caption)
-                                }
-                                Spacer()
-                                VStack (spacing: 2) { Image(systemName:"hand.raised")
-                                    Text("Contact")
-                                        .font(.caption)
-                                }
-                                Spacer()
                             }
+                            
+                            switch page {
+                            case .Info:
+                                SundaysView()
+                            case .Schedule:
+                                GiveView()
+                            case .Location:
+                                HomeView()
+                            case .Contact:
+                                ContactView()
+                            }
+                            Spacer()
                         }
-                        Spacer()
                     }
+                    Spacer()
+                    
                 }
             }
         }.ignoresSafeArea(.all)
