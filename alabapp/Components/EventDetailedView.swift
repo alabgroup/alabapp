@@ -72,13 +72,11 @@ struct EventDetailedView: View {
                                     .tag(Page.Schedule)
                                 LocationView()
                                     .tag(Page.Location)
-                                GiveView()
+                                ContactView()
                                     .tag(Page.Contact)
                                 
                             }
                             .tabViewStyle(PageTabViewStyle())
-                            .onChange(of: currentPage) { newValue in
-                                print("New page: \(newValue)")}
                         }
                     }
                     Spacer()
