@@ -12,14 +12,14 @@ struct SundaysView: View {
     // Attempt to open Youtube if it is installed in the user's
     // device. Fall back to opening their web browser.
     func openYoutube(youtubeId: String) {
-       var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+        var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
         if UIApplication.shared.canOpenURL(youtubeUrl as URL) {
             UIApplication.shared.open(youtubeUrl as URL)
-       } else {
-           youtubeUrl = NSURL(string:"https://www.youtube.com/watch?v=\(youtubeId)")!
-           UIApplication.shared.open(youtubeUrl as URL)
-           
-       }
+        } else {
+            youtubeUrl = NSURL(string:"https://www.youtube.com/watch?v=\(youtubeId)")!
+            UIApplication.shared.open(youtubeUrl as URL)
+            
+        }
     }
     
     @State var toggleToNewYork = true
