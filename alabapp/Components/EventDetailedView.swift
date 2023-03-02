@@ -31,13 +31,30 @@ struct EventDetailedView: View {
                         AnnouncementsView()
                         
                         NavigationView() {
-                            HStack(spacing: 30) {
+                            HStack(spacing: 2) {
                                 Spacer()
-                                Image(systemName:"info.bubble")
+                                VStack (spacing: 2) {
+                                    Image(systemName:"info.bubble")
+                                    Text("Info")
+                                        .font(.caption)
+                                }
                                 Spacer()
-                                Image(systemName:"calendar")
+                                VStack (spacing: 2) {
+                                    Image(systemName:"calendar")
+                                    Text("Schedule")
+                                        .font(.caption)
+                                }
                                 Spacer()
-                                Image(systemName:"video")
+                                VStack (spacing: 2) {
+                                    Image(systemName:"mappin")
+                                    Text("Location")
+                                        .font(.caption)
+                                }
+                                Spacer()
+                                VStack (spacing: 2) { Image(systemName:"hand.raised")
+                                    Text("Contact")
+                                        .font(.caption)
+                                }
                                 Spacer()
                             }
                         }
