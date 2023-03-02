@@ -31,60 +31,60 @@ struct EventDetailedView: View {
     }
     
     var body: some View {
-     
-            ZStack (alignment: .top) {
-                VStack {
-                    Image("gospelForumBanner")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea(.all)
-                        .frame(height: 150)
-                        .cornerRadius(0)
+        
+        ZStack (alignment: .top) {
+            VStack {
+                Image("gospelForumBanner")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea(.all)
+                    .frame(height: 150)
+                    .cornerRadius(0)
+                
+                Text("Gospel Forum")
+                    .fontWeight(.bold)
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .frame(width: 361, height: 0, alignment: .topLeading)
+                    .offset(x: 10, y: -70.50)
+                
+                
+                VStack(spacing: 20) {
+                    AnnouncementsView()
+                        .padding(.bottom, 6)
                     
-                    Text("Gospel Forum")
-                        .fontWeight(.bold)
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                        .frame(width: 361, height: 0, alignment: .topLeading)
-                        .offset(x: 10, y: -70.50)
-                    
-                    
-                    VStack(spacing: 20) {
-                        AnnouncementsView()
-                            .padding(.bottom, 6)
-                        
-                        // Navigation bar for Events Tab View
-                        VStack() {
-                            ScrollView(.horizontal) {
-                                HStack() {
-                                    pageButton(Page.Info, "info.bubble", "Info")
-                                    pageButton(Page.Schedule, "calendar", "Schedule")
-                                    pageButton(Page.Location, "mappin", "Location")
-                                    pageButton(Page.Contact, "hand.raised", "Contact")
-                                }
+                    // Navigation bar for Events Tab View
+                    VStack() {
+                        ScrollView(.horizontal) {
+                            HStack() {
+                                pageButton(Page.Info, "info.bubble", "Info")
+                                pageButton(Page.Schedule, "calendar", "Schedule")
+                                pageButton(Page.Location, "mappin", "Location")
+                                pageButton(Page.Contact, "hand.raised", "Contact")
                             }
-                            
-                            TabView (selection: $currentPage) {
-                                
-                                InfoView()
-                                    .tag(Page.Info)
-                                ScheduleView()
-                                    .tag(Page.Schedule)
-                                LocationView()
-                                    .tag(Page.Location)
-                                ContactView()
-                                    .tag(Page.Contact)
-                                
-                            }
-                            .tabViewStyle(PageTabViewStyle())
                         }
+                        
+                        TabView (selection: $currentPage) {
+                            
+                            InfoView()
+                                .tag(Page.Info)
+                            ScheduleView()
+                                .tag(Page.Schedule)
+                            LocationView()
+                                .tag(Page.Location)
+                            ContactView()
+                                .tag(Page.Contact)
+                            
+                        }
+                        .tabViewStyle(PageTabViewStyle())
                     }
-                    Spacer()
-                    
                 }
-            }.edgesIgnoringSafeArea(.top)
-        }
- 
+                Spacer()
+                
+            }
+        }.edgesIgnoringSafeArea(.top)
+    }
+    
 }
 
 struct EventDetailedView_Previews: PreviewProvider {
