@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventsView: View {
     let screenW = CGFloat((UIScreen.main.bounds.width - 48.0))
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -24,7 +24,7 @@ struct EventsView: View {
                         .font(.title)
                         .frame(width: screenW, height: 35, alignment: .topLeading)
                     
-                    EventCardView()
+                    EventCardView(eventTitle: "Gospel Forum", dateRange: "April 21 to 23, 2023", location: "Hilton Parsippany", image: "gospelforum")
                     
                 }.padding(.bottom, 30)
                 
@@ -33,8 +33,8 @@ struct EventsView: View {
                         .fontWeight(.medium)
                         .font(.title)
                         .frame(width: screenW, height: 24, alignment: .topLeading)
-                    EventCardView()
-                    EventCardView()
+                    EventCardView(eventTitle: "Homeward Youth Camp", dateRange: "July 1 to 28, 2023", location: "Kean University", image: "hyc")
+                    EventCardView(eventTitle: "Gospel Forum", dateRange: "April 21 to 23, 2023", location: "Hilton Parsippany", image: "gospelforum")
                 }.padding(.bottom, 30)
             }
         }
