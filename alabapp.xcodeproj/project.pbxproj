@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00F19ECB29AA89420010932B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F19ECA29AA89420010932B /* ContactView.swift */; };
+		00F19ECD29AB117D0010932B /* GivingIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F19ECC29AB117D0010932B /* GivingIconsView.swift */; };
 		F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35329AA80CA00DDBC45 /* alabappApp.swift */; };
 		F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35529AA80CA00DDBC45 /* ContentView.swift */; };
 		F625B35829AA80CC00DDBC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F625B35729AA80CC00DDBC45 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		00F19ECA29AA89420010932B /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		00F19ECC29AB117D0010932B /* GivingIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivingIconsView.swift; sourceTree = "<group>"; };
 		F625B35029AA80CA00DDBC45 /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F625B35329AA80CA00DDBC45 /* alabappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappApp.swift; sourceTree = "<group>"; };
 		F625B35529AA80CA00DDBC45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				F625B38329AA81D900DDBC45 /* EventsView.swift */,
 				F625B38929AA820700DDBC45 /* HomeView.swift */,
 				F625B38729AA820000DDBC45 /* GiveView.swift */,
+				00F19ECC29AB117D0010932B /* GivingIconsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */,
 				00F19ECB29AA89420010932B /* ContactView.swift in Sources */,
 				F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */,
+				00F19ECD29AB117D0010932B /* GivingIconsView.swift in Sources */,
 				F625B38A29AA820800DDBC45 /* HomeView.swift in Sources */,
 				F625B38829AA820000DDBC45 /* GiveView.swift in Sources */,
 				F625B38429AA81D900DDBC45 /* EventsView.swift in Sources */,
