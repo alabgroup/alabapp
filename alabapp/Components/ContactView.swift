@@ -35,6 +35,16 @@ struct ContactView: View {
         }
     }
     
+    var phoneNumber = "646-948-6900"
+    
+    // Maybe call Alabaster's phone number.
+    func callAlab() {
+        let phone = "tel://"
+        let phoneNumberFormatted = phone + phoneNumber
+        guard let url = URL(string: phoneNumberFormatted) else { return }
+        UIApplication.shared.open(url)
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text("Contact")
@@ -67,13 +77,17 @@ struct ContactView: View {
                     
                 }
                 Spacer()
-                HStack {
-                    Image(systemName: "phone")
-                        .foregroundColor(.black)
-                    Text("Phone")
-                        .font(MyFont.caption)
+                Button (action: {callAlab()}) {
+                    HStack {
+                        Image(systemName: "phone")
+                            .foregroundColor(.black)
+                        Text("Phone")
+                            .font(MyFont.caption)
+                    }
+                    
                 }
                 Spacer()
+                
             }
         }
         .frame(width: 325)
