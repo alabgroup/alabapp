@@ -40,5 +40,6 @@ struct MyFont {
     static let darkBlue = Color(hex: 0x052D68)
     static let lightBlue = Color(hex: 0x1E5B85)
     static let lightGray = Color(hex: 0xBDBDBD)
+    static let lightestGray = Color(red: 0.961, green: 0.961, blue: 0.961)
     static let darkGray = Color(hex: 0x666666)
 }

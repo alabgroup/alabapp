@@ -17,20 +17,20 @@ struct HomeView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea(.all)
-                        .frame(height: 254)
+                        .frame(height: 200)
                         .cornerRadius(0)
-                    // .offset(x: 0, y: -300.50)
                     
                     Text("Alabaster Group")
                         .fontWeight(.bold)
                         .font(MyFont.largeTitle)
                         .foregroundColor(MyFont.white)
                         .frame(width: 361, height: 0, alignment: .topLeading)
-                        .offset(x: 10, y: -100.50)
+                        .offset(x: 10, y: -80)
                     
                     VStack(alignment: .leading, spacing: 30) {
                         
                         AnnouncementsView()
+                            .padding(.bottom, 20)
                         ContactView()
                         SundaysView()
                         

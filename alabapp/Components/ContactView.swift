@@ -29,10 +29,20 @@ struct ContactView: View {
         if let url = URL(string: "mailto:\(email)") {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url)
-              } else {
+            } else {
                 UIApplication.shared.openURL(url)
-              }
+            }
         }
+    }
+    
+    var phoneNumber = "646-948-6900"
+    
+    // Maybe call Alabaster's phone number.
+    func callAlab() {
+        let phone = "tel://"
+        let phoneNumberFormatted = phone + phoneNumber
+        guard let url = URL(string: phoneNumberFormatted) else { return }
+        UIApplication.shared.open(url)
     }
     
     var body: some View {
@@ -67,13 +77,17 @@ struct ContactView: View {
                     
                 }
                 Spacer()
-                HStack {
-                    Image(systemName: "phone")
-                        .foregroundColor(.black)
-                    Text("Phone")
-                        .font(MyFont.caption)
+                Button (action: {callAlab()}) {
+                    HStack {
+                        Image(systemName: "phone")
+                            .foregroundColor(.black)
+                        Text("Phone")
+                            .font(MyFont.caption)
+                    }
+                    
                 }
                 Spacer()
+                
             }
         }
         .frame(width: 325)
