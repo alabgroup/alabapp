@@ -33,7 +33,7 @@ struct ContentView: View {
                         .font(MyFont.caption2)
                         .foregroundColor(MyFont.lightGray)
                 }
-        }
+        }.accentColor(MyFont.black)
 
     }
 }
