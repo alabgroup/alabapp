@@ -76,7 +76,8 @@ struct EventDetailedView: View {
                                 .tag(Page.Contact)
                             
                         }
-                        .tabViewStyle(PageTabViewStyle())
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
                     }
                 }
                 Spacer()
