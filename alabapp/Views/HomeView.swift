@@ -30,6 +30,7 @@ struct HomeView: View {
                     VStack(alignment: .leading, spacing: 30) {
                         
                         AnnouncementsView()
+                            .padding(.bottom, 20)
                         ContactView()
                         SundaysView()
                         

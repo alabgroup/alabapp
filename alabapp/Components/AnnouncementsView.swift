@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct AnnouncementsView: View {
+    let screenW = CGFloat((UIScreen.main.bounds.width - 48.0))
+
     var body: some View {
-        VStack (spacing: 20) {
+        VStack (spacing: 10) {
             Text("Announcements")
                 .fontWeight(.medium)
                 .font(MyFont.title)
                 .foregroundColor(MyFont.black)
-                .frame(width: 325, height: 35, alignment: .topLeading)
+                .frame(width: screenW, alignment: .topLeading)
             
             Text("Sunday service on Sunday, June 14th will take place in Edison, NJ.\nContact us to confirm your attendance.")
-                .padding([.leading, .trailing], 6)
+                .padding(.horizontal, 6)
                 .font(MyFont.caption)
                 .foregroundColor(MyFont.black)
-                .frame(maxWidth: 325, maxHeight: 80)
+                .frame(maxWidth: screenW, maxHeight: 70)
                 .background(
                     Rectangle()
-                        .fill(Color(red: 0.961, green: 0.961, blue: 0.961))
+                        .fill(MyFont.lightestGray)
                         .cornerRadius(8)
-                        .frame(width: 325, height: 80)
+                        .frame(width: screenW, height: 70)
                         .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 2)
                 )
         }

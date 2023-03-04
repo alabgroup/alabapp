@@ -105,7 +105,7 @@ struct SundaysView: View {
                         Button(action: {
                             openYoutube(youtubeId: "McJAL7aaLvs")
                         }) {Text("Stream: Feb 19")
-                                .font(MyFont.headline)
+                                .font(MyFont.subheadline)
                                 .foregroundColor(MyFont.white)}
                     }
                     ZStack {
@@ -115,7 +115,7 @@ struct SundaysView: View {
                         Button(action:{
                             openYoutube(youtubeId: "oZO2uuRfUuA")
                         }) {Text("Watch: Feb 12")
-                                .font(MyFont.headline)
+                                .font(MyFont.subheadline)
                                 .foregroundColor(MyFont.lightBlue)
                         }
                     }

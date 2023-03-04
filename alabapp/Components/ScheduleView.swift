@@ -54,7 +54,7 @@ struct ScheduleView: View {
                 
                 Text("Friday, April 21")
                     .font(.title2)
-                    .padding([.leading, .vertical], 24)
+                    .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                 
                 Group {
                     schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
@@ -65,7 +65,7 @@ struct ScheduleView: View {
                 
                 Text("Saturday, April 22")
                     .font(.title2)
-                    .padding([.leading, .vertical], 24)
+                    .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                 
                 Group {
                     schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
@@ -76,7 +76,7 @@ struct ScheduleView: View {
                 
                 Text("Sunday, April 23")
                     .font(.title2)
-                    .padding([.leading, .vertical], 24)
+                    .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                 
                 Group {
                     schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")

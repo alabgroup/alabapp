@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EventsView: View {
+    let screenW = CGFloat((UIScreen.main.bounds.width - 48.0))
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -15,26 +17,25 @@ struct EventsView: View {
                     Text("Events")
                         .fontWeight(.medium)
                         .font(.largeTitle)
-                        .frame(width: 325, height: 30, alignment: .center)
+                        .frame(width: screenW, height: 30, alignment: .center)
                     
                     Text("Happening Now")
                         .fontWeight(.medium)
                         .font(.title)
-                        .frame(width: 325, height: 35, alignment: .topLeading)
-                        .padding(.bottom, 40)
+                        .frame(width: screenW, height: 35, alignment: .topLeading)
                     
                     EventCardView()
                     
-                }.padding(.bottom, 50)
+                }.padding(.bottom, 30)
                 
-                VStack (spacing: 60) {
+                VStack (spacing: 30) {
                     Text("Upcoming")
                         .fontWeight(.medium)
                         .font(.title)
-                        .frame(width: 325, height: 35, alignment: .topLeading)
+                        .frame(width: screenW, height: 24, alignment: .topLeading)
                     EventCardView()
                     EventCardView()
-                }
+                }.padding(.bottom, 30)
             }
         }
     }
