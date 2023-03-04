@@ -13,6 +13,7 @@ struct InfoView: View {
             VStack (alignment: .leading, spacing: 10) {
                 Text("Policies")
                     .font(.title)
+                    .padding(.top, 20)
                 Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
                     .font(.caption)
                 

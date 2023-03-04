@@ -24,21 +24,26 @@ struct SundaysView: View {
     
     @State var toggleToNewYork = true
     
+    let pillWidth = CGFloat((UIScreen.main.bounds.width - 48.0))
+    let miniPillWidth = 145.0
+    
     var body: some View {
         VStack (spacing: 14) {
             Text("Sundays")
                 .font(MyFont.title)
                 .foregroundColor(MyFont.black)
-                .frame(width: 325, height: 35, alignment: .topLeading)
+                .frame(width: pillWidth, height: 35, alignment: .topLeading)
+            
+            // Toggle between NYC and Boston info
             ZStack (alignment: .leading) {
                 ZStack (alignment: .trailing) {
                     Capsule()
-                        .frame(width: 325, height: 54)
-                        .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
+                        .frame(width: pillWidth, height: 54)
+                        .foregroundColor(MyFont.lightestGray)
                     Text("NYC")
-                        .offset(x: -234)
+                        .offset(x: -254)
                         .font(MyFont.headline)
-                        .foregroundColor(MyFont.darkBlue)
+                        .foregroundColor(toggleToNewYork ? MyFont.darkBlue : MyFont.lightGray)
                     Text("Boston")
                         .offset(x: -50)
                         .font(MyFont.subheadline)
@@ -46,13 +51,13 @@ struct SundaysView: View {
                 }
                 ZStack {
                     Capsule()
-                        .frame(width:145, height:50)
+                        .frame(width: miniPillWidth, height: 50)
                         .foregroundColor(.white)
                     Text(toggleToNewYork ? "NYC" : "Boston")
-                        .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
+                        .foregroundColor(MyFont.darkBlue)
                 }
                 .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
-                .offset(x:toggleToNewYork ? 2: 175)
+                .offset(x:toggleToNewYork ? 2: (pillWidth - miniPillWidth - 4))
                 .animation(Animation.spring(), value: toggleToNewYork)
             }
             .onTapGesture {
@@ -62,29 +67,34 @@ struct SundaysView: View {
             VStack(alignment: .leading, spacing: 2) {
                 HStack {
                     Image("building")
+                        .padding(.leading, 10)
                     Text(toggleToNewYork ? "141st St & Amsterdam Ave, Manhattan" : "929 Mass Ave, Cambridge")
                         .font(MyFont.callout)
                         .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("time")
+                        .padding(.leading, 10)
                     Text(toggleToNewYork ? "Service starts at 10:30 AM" : "Service starts at 4:30 PM")
                         .font(MyFont.callout)
                         .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("personcheck")
+                        .padding(.leading, 10)
                     Text(toggleToNewYork ? " Open to all" : " Open to students")
                         .font(MyFont.callout)
                         .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("chat")
+                        .padding(.leading, 10)
                     Text("Contact us to attend in person")
                         .font(MyFont.callout)
                         .foregroundColor(MyFont.black)
+                    Spacer()
                 }
-            }
+            }.frame(width: pillWidth)
             
             if toggleToNewYork {
                 HStack (spacing: 50) {
@@ -109,7 +119,7 @@ struct SundaysView: View {
                                 .foregroundColor(MyFont.lightBlue)
                         }
                     }
-                }
+                }.frame(width: pillWidth)
                 
             }
             
