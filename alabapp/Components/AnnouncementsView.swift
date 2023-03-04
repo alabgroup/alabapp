@@ -12,12 +12,14 @@ struct AnnouncementsView: View {
         VStack (spacing: 20) {
             Text("Announcements")
                 .fontWeight(.medium)
-                .font(.title)
+                .font(MyFont.title)
+                .foregroundColor(MyFont.black)
                 .frame(width: 325, height: 35, alignment: .topLeading)
             
             Text("Sunday service on Sunday, June 14th will take place in Edison, NJ.\nContact us to confirm your attendance.")
                 .padding([.leading, .trailing], 6)
-                .font(.subheadline)
+                .font(MyFont.caption)
+                .foregroundColor(MyFont.black)
                 .frame(maxWidth: 325, maxHeight: 80)
                 .background(
                     Rectangle()

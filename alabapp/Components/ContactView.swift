@@ -38,7 +38,8 @@ struct ContactView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text("Contact")
-                .font(.title)
+                .font(MyFont.title)
+                .foregroundColor(MyFont.black)
                 .fontWeight(.medium)
                 .padding(.bottom, 2)
             Divider()
@@ -51,7 +52,7 @@ struct ContactView: View {
                             .resizable()
                             .frame(width: 24, height: 24)
                         Text("Chat")
-                            .font(.subheadline)
+                            .font(MyFont.caption)
                     }
                     
                 }
@@ -61,7 +62,7 @@ struct ContactView: View {
                         Image(systemName: "envelope")
                             .foregroundColor(.black)
                         Text("Email")
-                            .font(.subheadline)
+                            .font(MyFont.caption)
                     }
                     
                 }
@@ -70,7 +71,7 @@ struct ContactView: View {
                     Image(systemName: "phone")
                         .foregroundColor(.black)
                     Text("Phone")
-                        .font(.subheadline)
+                        .font(MyFont.caption)
                 }
                 Spacer()
             }

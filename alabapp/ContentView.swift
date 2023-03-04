@@ -16,16 +16,22 @@ struct ContentView: View {
                 .tabItem() {
                     Image("home")
                     Text("Home")
+                        .font(MyFont.caption2)
+                        .foregroundColor(MyFont.lightGray)
                 }
             EventsView()
                 .tabItem() {
                     Image("calendar")
                     Text("Events")
+                        .font(MyFont.caption2)
+                        .foregroundColor(MyFont.lightGray)
                 }
             GiveView()
                 .tabItem() {
                     Image("give")
                     Text("Give")
+                        .font(MyFont.caption2)
+                        .foregroundColor(MyFont.lightGray)
                 }
         }
 
