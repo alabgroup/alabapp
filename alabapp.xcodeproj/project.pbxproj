@@ -15,6 +15,7 @@
 		C8228AA629AABDE300FB4FE7 /* AnnouncementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */; };
 		C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */; };
 		C8228AAD29AB0A0300FB4FE7 /* EventDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */; };
+		C85294C029B3DE0D00AECE38 /* ScheduleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85294BF29B3DE0D00AECE38 /* ScheduleAPI.swift */; };
 		F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35329AA80CA00DDBC45 /* alabappApp.swift */; };
 		F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35529AA80CA00DDBC45 /* ContentView.swift */; };
 		F625B35829AA80CC00DDBC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F625B35729AA80CC00DDBC45 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
 		C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailedView.swift; sourceTree = "<group>"; };
+		C85294BF29B3DE0D00AECE38 /* ScheduleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPI.swift; sourceTree = "<group>"; };
 		F625B35029AA80CA00DDBC45 /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F625B35329AA80CA00DDBC45 /* alabappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappApp.swift; sourceTree = "<group>"; };
 		F625B35529AA80CA00DDBC45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C85294BE29B3DDD000AECE38 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C85294BF29B3DE0D00AECE38 /* ScheduleAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		F625B34729AA80CA00DDBC45 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		F625B35229AA80CA00DDBC45 /* alabapp */ = {
 			isa = PBXGroup;
 			children = (
+				C85294BE29B3DDD000AECE38 /* API */,
 				F6DF808A29B043110071E980 /* Info.plist */,
 				F6DF808729B03A8B0071E980 /* Font */,
 				C8228AA729AABE5C00FB4FE7 /* Components */,
@@ -328,6 +339,7 @@
 				C82046B829B0621B0081BC3C /* InfoView.swift in Sources */,
 				C8228AAD29AB0A0300FB4FE7 /* EventDetailedView.swift in Sources */,
 				F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */,
+				C85294C029B3DE0D00AECE38 /* ScheduleAPI.swift in Sources */,
 				00F19ECB29AA89420010932B /* ContactView.swift in Sources */,
 				C82046BA29B062320081BC3C /* ScheduleView.swift in Sources */,
 				C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */,

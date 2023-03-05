@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    let scheduleW = CGFloat((UIScreen.main.bounds.width - 48.0))
+    let scheduleW = CGFloat(UIScreen.main.bounds.width - 48.0)
     let colorIndicatorW = 8.0
     let colorIndicatorTotalW = 16.0
     
-    enum EventType {
-        case Meal
-        case Session
+    @State var agendaItemList = [AgendaItem]()
+    
+    enum EventType: Int {
+        case Meal = 0
+        case Session = 1
+    }
+    
+    func timeFormatted(_ time: String) -> String {
+        let start = time.index(time.startIndex, offsetBy: 11)
+        let end = time.index(time.endIndex, offsetBy: -13)
+        let range = start..<end
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        let date = dateFormatter.date(from: String(time[range]))
+        dateFormatter.dateFormat = "h:mm a"
+        let Date12 = dateFormatter.string(from: date!)
+        return Date12
     }
     
     func schedulingComponent(_ eventType: EventType, _ startTime: String, _ endTime: String, _ title: String,  _ location: String) -> some View {
@@ -51,39 +67,17 @@ struct ScheduleView: View {
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                
                 Text("Friday, April 21")
                     .font(.title2)
                     .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                 
-                Group {
-                    schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
-                    schedulingComponent(EventType.Session, "5:00 PM", "10:00 PM", "Session", "Salon I")
-                    schedulingComponent(EventType.Meal, "10:00 PM", "11:30 PM", "Pizza", "Silvermine II")
-                    schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
+                ForEach(agendaItemList) {agendaItem in
+                    schedulingComponent(EventType(rawValue: agendaItem.values.eventType) ?? EventType.Meal, timeFormatted(agendaItem.values.startTime), timeFormatted(agendaItem.values.endTime), agendaItem.values.name, agendaItem.values.location)
                 }
-                
-                Text("Saturday, April 22")
-                    .font(.title2)
-                    .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
-                
-                Group {
-                    schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
-                    schedulingComponent(EventType.Session, "5:00 PM", "10:00 PM", "Session", "Salon I")
-                    schedulingComponent(EventType.Meal, "10:00 PM", "11:30 PM", "Pizza", "Silvermine II")
-                    schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
-                }
-                
-                Text("Sunday, April 23")
-                    .font(.title2)
-                    .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
-                
-                Group {
-                    schedulingComponent(EventType.Meal, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
-                    schedulingComponent(EventType.Session, "5:00 PM", "10:00 PM", "Session", "Salon I")
-                    schedulingComponent(EventType.Meal, "10:00 PM", "11:30 PM", "Pizza", "Silvermine II")
-                    schedulingComponent(EventType.Session, "5:00 PM", "7:00 PM", "Dinner", "Silvermine II")
-                }
+            }
+        }.onAppear {
+            ScheduleAPI().getData() { agendaItemList in
+                self.agendaItemList = agendaItemList
             }
         }
     }
