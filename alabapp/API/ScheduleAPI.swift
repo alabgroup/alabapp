@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//
+
 struct Schedule : Decodable {
     var items: [AgendaItem]
 }
@@ -47,7 +47,7 @@ class ScheduleAPI: ObservableObject {
             let decodedItems = try! JSONDecoder().decode(Schedule.self, from: data)
             
             DispatchQueue.main.async {
-                var schedule = decodedItems.items.sorted {$0.values.startTime < $1.values.startTime}
+                let schedule = decodedItems.items.sorted {$0.values.startTime < $1.values.startTime}
                 let groupedItems = Dictionary(grouping: schedule ) { String($0.values.startTime.prefix(10)) }
                 let sortedItems = groupedItems.sorted( by: { $0.0 < $1.0 })
                 for (key, value) in sortedItems {

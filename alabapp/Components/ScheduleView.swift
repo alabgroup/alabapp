@@ -20,13 +20,12 @@ struct ScheduleView: View {
         case Session = 1
     }
     
-    func formattedTime(_ time: String) -> String {
+    func formattedDate(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en-US")
-       // dateFormatter.setLocalizedDateFormatFromTemplate("EEE MMM d yyyy")
-        let date = dateFormatter.date(from: time)
-        dateFormatter.dateFormat = "EEEE, mm dd"
-        return dateFormatter.string(from: date!)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        var s = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "EEEE, MMMM dd"
+        return dateFormatter.string(from: s!)
     }
     
     func timeFormatted(_ time: String) -> String {
@@ -79,7 +78,7 @@ struct ScheduleView: View {
             VStack (alignment: .leading) {
                 
                 ForEach(network.days) { day in
-                    Text(day.name)
+                    Text(formattedDate(day.name))
                         .font(.title2)
                         .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                     
