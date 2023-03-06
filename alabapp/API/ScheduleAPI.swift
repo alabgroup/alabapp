@@ -6,9 +6,15 @@
 //
 
 import Foundation
-
+//
 struct Schedule : Decodable {
     var items: [AgendaItem]
+}
+
+struct Day : Identifiable {
+    var id: String
+    let name : String
+    var items : [AgendaItem]
 }
 
 struct AgendaItem : Decodable, Identifiable {
@@ -26,24 +32,28 @@ struct RowContent: Decodable {
 }
 
 // Figure out the completion
-class ScheduleAPI {
-    
-    func getData(completion:@escaping ([AgendaItem]) -> ()) {
+class ScheduleAPI: ObservableObject {
+    @Published var days = [Day]()
+
+    func getData() {
         
-        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_gospel_forum/rows?useColumnNames=true?valueFormat=rich?limit=40") else {
-            return}
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_gospel_forum8/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)
         let AuthTokenString = ""
         urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            guard let data = data else {
-                return }
-            let agendaItemList = try! JSONDecoder().decode(Schedule.self, from: data)
-            print(agendaItemList)
+            guard let data = data else {return }
+            let decodedItems = try! JSONDecoder().decode(Schedule.self, from: data)
+            
             DispatchQueue.main.async {
-                completion(agendaItemList.items)
-              
+                var schedule = decodedItems.items.sorted {$0.values.startTime < $1.values.startTime}
+                let groupedItems = Dictionary(grouping: schedule ) { String($0.values.startTime.prefix(10)) }
+                let sortedItems = groupedItems.sorted( by: { $0.0 < $1.0 })
+                for (key, value) in sortedItems {
+                    self.days.append(Day(id: key, name: key, items: value))
+                }
+                
             }
         }
         task.resume()

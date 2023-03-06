@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct alabappApp: App {
+    var network = ScheduleAPI()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(network)
         }
     }
 }

@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct ScheduleView: View {
+    
+    @EnvironmentObject var network: ScheduleAPI
+    
     let scheduleW = CGFloat(UIScreen.main.bounds.width - 48.0)
     let colorIndicatorW = 8.0
     let colorIndicatorTotalW = 16.0
     
-    @State var agendaItemList = [AgendaItem]()
-    
     enum EventType: Int {
         case Meal = 0
         case Session = 1
+    }
+    
+    func formattedTime(_ time: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en-US")
+       // dateFormatter.setLocalizedDateFormatFromTemplate("EEE MMM d yyyy")
+        let date = dateFormatter.date(from: time)
+        dateFormatter.dateFormat = "EEEE, mm dd"
+        return dateFormatter.string(from: date!)
     }
     
     func timeFormatted(_ time: String) -> String {
@@ -67,24 +77,25 @@ struct ScheduleView: View {
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                Text("Friday, April 21")
-                    .font(.title2)
-                    .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                 
-                ForEach(agendaItemList) {agendaItem in
-                    schedulingComponent(EventType(rawValue: agendaItem.values.eventType) ?? EventType.Meal, timeFormatted(agendaItem.values.startTime), timeFormatted(agendaItem.values.endTime), agendaItem.values.name, agendaItem.values.location)
+                ForEach(network.days) { day in
+                    Text(day.name)
+                        .font(.title2)
+                        .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
+                    
+                    ForEach(day.items) {item in
+                        schedulingComponent(EventType(rawValue: item.values.eventType) ?? EventType.Meal, timeFormatted(item.values.startTime), timeFormatted(item.values.endTime), item.values.name, item.values.location)
+                    }
                 }
             }
         }.onAppear {
-            ScheduleAPI().getData() { agendaItemList in
-                self.agendaItemList = agendaItemList
-            }
+            network.getData()
         }
     }
 }
 
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleView()
+        ScheduleView().environmentObject(ScheduleAPI())
     }
 }
