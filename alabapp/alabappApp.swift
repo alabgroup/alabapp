@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct alabappApp: App {
-    var network = ScheduleAPI()
+    var network = Network()
 
     var body: some Scene {
         WindowGroup {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScheduleView: View {
     
-    @EnvironmentObject var network: ScheduleAPI
+    @EnvironmentObject var network: Network
     
     let scheduleW = CGFloat(UIScreen.main.bounds.width - 48.0)
     let colorIndicatorW = 8.0
@@ -88,13 +88,13 @@ struct ScheduleView: View {
                 }
             }
         }.onAppear {
-            network.getData()
+            network.getSchedule()
         }
     }
 }
 
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleView().environmentObject(ScheduleAPI())
+        ScheduleView().environmentObject(Network())
     }
 }
