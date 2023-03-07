@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    
+    let event: Event
     @EnvironmentObject var network: Network
     
     let scheduleW = CGFloat(UIScreen.main.bounds.width - 48.0)
@@ -92,13 +92,16 @@ struct ScheduleView: View {
                 }
             }
         }.onAppear {
-            network.getSchedule()
+            network.getSchedule(event: event)
         }
     }
 }
 
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleView().environmentObject(Network())
+        
+        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        
+        ScheduleView(event: gospelForum).environmentObject(Network())
     }
 }

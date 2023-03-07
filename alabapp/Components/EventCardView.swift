@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct EventCardView : View {
-    var eventTitle: String
-    var dateRange: String
-    var location: String
+    let event: Event
     var image: String
 
     var body: some View {
         // Event card
-        NavigationLink(destination: EventDetailedView()) {
+        NavigationLink(destination: EventDetailedView(event: event)) {
             ZStack (alignment: .topLeading) {
                 
                 // Event title and info
@@ -26,7 +24,7 @@ struct EventCardView : View {
                         .frame(width: (UIScreen.main.bounds.width - 48), height: 200)
                         .padding([.horizontal], 24)
                     
-                    Text(eventTitle)
+                    Text(event.values.name)
                         .font(MyFont.title3)
                         .foregroundColor(Color.black)
                         .padding(.leading, 40)
@@ -34,7 +32,7 @@ struct EventCardView : View {
                     HStack (spacing: 10) {
                         Image(systemName:"calendar")
                             .foregroundColor(Color.black)
-                        Text(dateRange)
+                        Text(event.values.datesString)
                             .font(MyFont.callout)
                             .foregroundColor(Color.black)
                     }.padding(.leading, 40)
@@ -42,7 +40,7 @@ struct EventCardView : View {
                     HStack (spacing: 10) {
                         Image(systemName:"mappin.and.ellipse")
                             .foregroundColor(Color.black)
-                        Text(location)
+                        Text(event.values.location)
                             .font(MyFont.callout)
                             .foregroundColor(Color.black)
                     }.padding(.leading, 40)
@@ -91,6 +89,7 @@ struct EventCardView : View {
 
 struct EventCardView_Previews: PreviewProvider {
     static var previews: some View {
-        EventCardView(eventTitle: "Gospel Forum", dateRange: "April 21 to 23, 2023", location: "Hilton Parsippany", image: "gospelforum")
+        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        EventCardView(event: gospelForum, image: "gospelforum")
     }
 }

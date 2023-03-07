@@ -94,9 +94,10 @@ class Network: ObservableObject {
     @Published var locationInfo = [LocationInfo]()
     @Published var events = [Event]()
     
-    func getSchedule() {
+    func getSchedule(event: Event) {
         
-        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_gospelForum23/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
+        self.days = [Day]()
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_\(event.values.codaName)/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
         
@@ -134,17 +135,17 @@ class Network: ObservableObject {
         task.resume()
     }
     
-    func getLocationContent() {
-        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/location_gospelForum23/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
+    func getLocationContent(event: Event) {
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/location_\(event.values.codaName)/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else {return }
-            let decodedItems = try! JSONDecoder().decode(EventList.self, from: data)
+            let decodedItems = try! JSONDecoder().decode(LocationInfoList.self, from: data)
             
             DispatchQueue.main.async {
-                self.events = decodedItems.items.sorted {$0.index < $1.index}
+                self.locationInfo = decodedItems.items.sorted {$0.index < $1.index}
             }
         }
         task.resume()

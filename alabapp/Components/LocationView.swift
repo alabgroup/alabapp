@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LocationView: View {
+    let event: Event
     @EnvironmentObject var network: Network
     
     var body: some View {
@@ -24,7 +25,7 @@ struct LocationView: View {
                 }
             }.padding(.horizontal, 24)
                 .onAppear {
-                    network.getLocationContent()
+                    network.getLocationContent(event: event)
                 }
         }
     }
@@ -32,6 +33,9 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView().environmentObject(Network())
+        
+        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        
+        LocationView(event: gospelForum).environmentObject(Network())
     }
 }
