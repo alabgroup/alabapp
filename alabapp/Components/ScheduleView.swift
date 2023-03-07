@@ -23,7 +23,7 @@ struct ScheduleView: View {
     func formattedDate(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var s = dateFormatter.date(from: dateString)
+        let s = dateFormatter.date(from: dateString)
         dateFormatter.dateFormat = "EEEE, MMMM dd"
         return dateFormatter.string(from: s!)
     }

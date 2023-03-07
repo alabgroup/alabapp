@@ -19,7 +19,7 @@ struct AnnouncementsView: View {
                 .foregroundColor(MyFont.black)
                 .frame(width: screenW, alignment: .topLeading)
             
-            Text(network.announcements.first?.values.message ?? "")
+            Text(network.announcements.first?.values.message ?? "There are no new announcements at this time.")
                 .padding(.horizontal, 6)
                 .font(MyFont.caption)
                 .foregroundColor(MyFont.black)
