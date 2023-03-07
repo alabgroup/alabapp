@@ -25,7 +25,7 @@ struct EventDetailedView: View {
             VStack {
                 Image(systemName: icon)
                 Text(title)
-                    .font(.caption)
+                    .font(MyFont.caption)
             } .frame(width: tabW)
         } .foregroundColor( currentPage == select ? Color.black : Color.gray )
     }
@@ -43,7 +43,7 @@ struct EventDetailedView: View {
                 
                 Text("Gospel Forum")
                     .fontWeight(.bold)
-                    .font(.largeTitle)
+                    .font(MyFont.largeTitle)
                     .foregroundColor(.white)
                     .frame(width: 361, height: 0, alignment: .topLeading)
                     .offset(x: 10, y: -70.50)

@@ -14,9 +14,11 @@ struct LocationView: View {
         ScrollView {
             VStack (alignment: .leading, spacing: 10) {
                 ForEach(network.locationInfo) { locationInfo in
-                    Text(locationInfo.values.title)
-                        .font(MyFont.title3)
-                        .padding(.top, 20)
+                    HStack {
+                        Image(systemName: locationInfo.values.icon)
+                        Text(locationInfo.values.title)
+                            .font(MyFont.title3)
+                    }.padding(.top, 20)
                     Text(locationInfo.values.message)
                         .font(MyFont.caption)
                 }

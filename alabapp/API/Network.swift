@@ -64,6 +64,7 @@ struct LocationInfo : Decodable, Identifiable {
 struct LocationContent : Decodable {
     var title: String
     var message: String
+    var icon: String
 }
 
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
@@ -75,7 +76,7 @@ class Network: ObservableObject {
     
     func getSchedule() {
         
-        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_gospel_forum8/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_gospelForum23/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
         

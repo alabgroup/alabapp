@@ -53,14 +53,18 @@ struct ScheduleView: View {
                 GridRow {
                     Text(startTime)
                         .gridColumnAlignment(.trailing)
+                        .font(MyFont.headline)
                     Text(title)
                         .fontWeight(.bold)
+                        .font(MyFont.headline)
                         .gridColumnAlignment(.leading)
                 }.frame(width: 180)
                 GridRow {
                     Text(endTime)
+                        .font(MyFont.headline)
                         .gridColumnAlignment(.trailing)
                     Text(location)
+                        .font(MyFont.headline)
                 }.frame(width: 180)
             }.frame(width: scheduleW - colorIndicatorTotalW)
             Spacer(minLength: 20)
@@ -79,7 +83,7 @@ struct ScheduleView: View {
                 
                 ForEach(network.days) { day in
                     Text(formattedDate(day.name))
-                        .font(.title2)
+                        .font(MyFont.title3)
                         .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 0))
                     
                     ForEach(day.items) {item in
