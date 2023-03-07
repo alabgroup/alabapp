@@ -12,22 +12,22 @@ struct InfoView: View {
         ScrollView {
             VStack (alignment: .leading, spacing: 10) {
                 Text("Policies")
-                    .font(.title)
+                    .font(MyFont.title)
                     .padding(.top, 20)
                 Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
-                    .font(.caption)
+                    .font(MyFont.caption)
                 
                 Text("More policies")
-                    .font(.title2)
+                    .font(MyFont.title)
                 Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
-                    .font(.caption)
+                    .font(MyFont.caption)
                 Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved.")
-                    .font(.caption)
+                    .font(MyFont.caption)
                 
                 Text("Even more policies")
-                    .font(.title2)
+                    .font(MyFont.title)
                 Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
-                    .font(.caption)
+                    .font(MyFont.caption)
             }.padding(.horizontal, 24)
         }
         

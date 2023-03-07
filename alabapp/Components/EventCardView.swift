@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct EventCardView : View {
-    var eventTitle: String
-    var dateRange: String
-    var location: String
+    let event: Event
     var image: String
 
     var body: some View {
         // Event card
-        NavigationLink(destination: EventDetailedView()) {
+        NavigationLink(destination: EventDetailedView(event: event)) {
             ZStack (alignment: .topLeading) {
                 
                 // Event title and info
@@ -23,25 +21,27 @@ struct EventCardView : View {
                     Image(image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 200)
+                        .frame(width: (UIScreen.main.bounds.width - 48), height: 200)
                         .padding([.horizontal], 24)
                     
-                    Text(eventTitle)
-                        .font(.title2)
+                    Text(event.values.name)
+                        .font(MyFont.title3)
                         .foregroundColor(Color.black)
                         .padding(.leading, 40)
+                    
                     HStack (spacing: 10) {
                         Image(systemName:"calendar")
                             .foregroundColor(Color.black)
-                        Text(dateRange)
-                            .font(.callout)
+                        Text(event.values.datesString)
+                            .font(MyFont.callout)
                             .foregroundColor(Color.black)
                     }.padding(.leading, 40)
+                    
                     HStack (spacing: 10) {
                         Image(systemName:"mappin.and.ellipse")
                             .foregroundColor(Color.black)
-                        Text(location)
-                            .font(.callout)
+                        Text(event.values.location)
+                            .font(MyFont.callout)
                             .foregroundColor(Color.black)
                     }.padding(.leading, 40)
                     
@@ -52,7 +52,7 @@ struct EventCardView : View {
                                 .frame(width: 76, height: 19)
                                 .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                             Text("Learn more")
-                                .font(.caption)
+                                .font(MyFont.caption)
                                 .foregroundColor(Color.white)
                         }.padding(.leading, 10)
                         
@@ -64,7 +64,7 @@ struct EventCardView : View {
                                 .frame(width: 76, height: 19)
                                 .foregroundColor(Color(red: 1, green: 0.921, blue: 0.642))
                             Text("Students")
-                                .font(.caption)
+                                .font(MyFont.caption)
                                 .foregroundColor(Color.black)
                         }.padding(.leading, 10)
                         ZStack {
@@ -72,7 +72,7 @@ struct EventCardView : View {
                                 .frame(width: 76, height: 19)
                                 .foregroundColor(Color(red: 0.908, green: 0.908, blue: 0.908))
                             Text("Public")
-                                .font(.caption)
+                                .font(MyFont.caption)
                                 .foregroundColor(Color.black)
                         }.padding(.leading, 3)
                     }.padding(.horizontal, 28)
@@ -89,6 +89,7 @@ struct EventCardView : View {
 
 struct EventCardView_Previews: PreviewProvider {
     static var previews: some View {
-        EventCardView(eventTitle: "Gospel Forum", dateRange: "April 21 to 23, 2023", location: "Hilton Parsippany", image: "gospelforum")
+        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        EventCardView(event: gospelForum, image: "gospelforum")
     }
 }

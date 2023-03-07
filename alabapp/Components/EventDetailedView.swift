@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EventDetailedView: View {
+    
+    var event: Event
     let tabW = CGFloat((UIScreen.main.bounds.width - 48.0) / 4.0)
     enum Page {
         case Info
@@ -25,7 +27,7 @@ struct EventDetailedView: View {
             VStack {
                 Image(systemName: icon)
                 Text(title)
-                    .font(.caption)
+                    .font(MyFont.caption)
             } .frame(width: tabW)
         } .foregroundColor( currentPage == select ? Color.black : Color.gray )
     }
@@ -43,7 +45,7 @@ struct EventDetailedView: View {
                 
                 Text("Gospel Forum")
                     .fontWeight(.bold)
-                    .font(.largeTitle)
+                    .font(MyFont.largeTitle)
                     .foregroundColor(.white)
                     .frame(width: 361, height: 0, alignment: .topLeading)
                     .offset(x: 10, y: -70.50)
@@ -68,9 +70,9 @@ struct EventDetailedView: View {
                             
                             InfoView()
                                 .tag(Page.Info)
-                            ScheduleView()
+                            ScheduleView(event: event)
                                 .tag(Page.Schedule)
-                            LocationView()
+                            LocationView(event: event)
                                 .tag(Page.Location)
                             ContactView()
                                 .tag(Page.Contact)
@@ -90,6 +92,9 @@ struct EventDetailedView: View {
 
 struct EventDetailedView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailedView()
+        
+        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        
+        EventDetailedView(event: gospelForum)
     }
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct EventsView: View {
+    
+    @EnvironmentObject var network: Network
+    
     let screenW = CGFloat((UIScreen.main.bounds.width - 48.0))
     
     var body: some View {
@@ -16,26 +19,29 @@ struct EventsView: View {
                 VStack (spacing: 20) {
                     Text("Events")
                         .fontWeight(.medium)
-                        .font(.largeTitle)
+                        .font(MyFont.largeTitle)
                         .frame(width: screenW, height: 30, alignment: .center)
                     
                     Text("Happening Now")
                         .fontWeight(.medium)
-                        .font(.title)
+                        .font(MyFont.title)
                         .frame(width: screenW, height: 35, alignment: .topLeading)
                     
-                    EventCardView(eventTitle: "Gospel Forum", dateRange: "April 21 to 23, 2023", location: "Hilton Parsippany", image: "gospelforum")
+                    EventCardView(event: network.events.first ?? Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23")), image: "gospelforum")
                     
                 }.padding(.bottom, 30)
                 
                 VStack (spacing: 30) {
                     Text("Upcoming")
                         .fontWeight(.medium)
-                        .font(.title)
+                        .font(MyFont.title)
                         .frame(width: screenW, height: 24, alignment: .topLeading)
-                    EventCardView(eventTitle: "Homeward Youth Camp", dateRange: "July 1 to 28, 2023", location: "Kean University", image: "hyc")
-                    EventCardView(eventTitle: "Gospel Forum", dateRange: "April 21 to 23, 2023", location: "Hilton Parsippany", image: "gospelforum")
+                    ForEach (network.events) { event in
+                        EventCardView(event: event, image: "hyc")
+                    }
                 }.padding(.bottom, 30)
+            }.onAppear {
+                network.getEvents()
             }
         }
     }
@@ -43,6 +49,6 @@ struct EventsView: View {
 
 struct EventsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsView()
+        EventsView().environmentObject(Network())
     }
 }
