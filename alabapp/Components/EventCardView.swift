@@ -23,25 +23,27 @@ struct EventCardView : View {
                     Image(image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 200)
+                        .frame(width: (UIScreen.main.bounds.width - 48), height: 200)
                         .padding([.horizontal], 24)
                     
                     Text(eventTitle)
-                        .font(.title2)
+                        .font(MyFont.title3)
                         .foregroundColor(Color.black)
                         .padding(.leading, 40)
+                    
                     HStack (spacing: 10) {
                         Image(systemName:"calendar")
                             .foregroundColor(Color.black)
                         Text(dateRange)
-                            .font(.callout)
+                            .font(MyFont.callout)
                             .foregroundColor(Color.black)
                     }.padding(.leading, 40)
+                    
                     HStack (spacing: 10) {
                         Image(systemName:"mappin.and.ellipse")
                             .foregroundColor(Color.black)
                         Text(location)
-                            .font(.callout)
+                            .font(MyFont.callout)
                             .foregroundColor(Color.black)
                     }.padding(.leading, 40)
                     
@@ -52,7 +54,7 @@ struct EventCardView : View {
                                 .frame(width: 76, height: 19)
                                 .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                             Text("Learn more")
-                                .font(.caption)
+                                .font(MyFont.caption)
                                 .foregroundColor(Color.white)
                         }.padding(.leading, 10)
                         
@@ -64,7 +66,7 @@ struct EventCardView : View {
                                 .frame(width: 76, height: 19)
                                 .foregroundColor(Color(red: 1, green: 0.921, blue: 0.642))
                             Text("Students")
-                                .font(.caption)
+                                .font(MyFont.caption)
                                 .foregroundColor(Color.black)
                         }.padding(.leading, 10)
                         ZStack {
@@ -72,7 +74,7 @@ struct EventCardView : View {
                                 .frame(width: 76, height: 19)
                                 .foregroundColor(Color(red: 0.908, green: 0.908, blue: 0.908))
                             Text("Public")
-                                .font(.caption)
+                                .font(MyFont.caption)
                                 .foregroundColor(Color.black)
                         }.padding(.leading, 3)
                     }.padding(.horizontal, 28)

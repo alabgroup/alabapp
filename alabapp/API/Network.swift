@@ -67,12 +67,32 @@ struct LocationContent : Decodable {
     var icon: String
 }
 
+// The event table.
+struct EventList : Decodable {
+    var items: [Event]
+}
+
+struct Event : Decodable, Identifiable {
+    var id: String
+    var index: Int
+    var values: EventContent
+}
+
+struct EventContent : Decodable {
+    var name: String
+    var location: String
+    var datesString: String
+    var audience: String
+    var codaName: String
+}
+
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
 
 class Network: ObservableObject {
     @Published var days = [Day]()
     @Published var announcements = [Announcement]()
     @Published var locationInfo = [LocationInfo]()
+    @Published var events = [Event]()
     
     func getSchedule() {
         
@@ -121,10 +141,26 @@ class Network: ObservableObject {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else {return }
-            let decodedItems = try! JSONDecoder().decode(LocationInfoList.self, from: data)
+            let decodedItems = try! JSONDecoder().decode(EventList.self, from: data)
             
             DispatchQueue.main.async {
-                self.locationInfo = decodedItems.items.sorted {$0.index < $1.index}
+                self.events = decodedItems.items.sorted {$0.index < $1.index}
+            }
+        }
+        task.resume()
+    }
+    
+    func getEvents() {
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/events/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {return }
+            let decodedItems = try! JSONDecoder().decode(EventList.self, from: data)
+            
+            DispatchQueue.main.async {
+                self.events = decodedItems.items.sorted {$0.index < $1.index}
             }
         }
         task.resume()
