@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationView: View {
-    let event: Event
+    let event: EventMeta
     @EnvironmentObject var network: Network
     
     var body: some View {
@@ -34,7 +34,7 @@ struct LocationView: View {
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23", imageUrl: "gospelforum"))
         
         LocationView(event: gospelForum).environmentObject(Network())
     }

@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct EventCardView : View {
-    let event: Event
-    var image: String
+    let event: EventMeta
+    let default_image = "AlabCityView"
 
+    func getSafeImage(named: String) -> Image {
+       let uiImage =  (UIImage(named: named) ?? UIImage(named: default_image))!
+       return Image(uiImage: uiImage)
+    }
+    
     var body: some View {
         // Event card
         NavigationLink(destination: EventDetailedView(event: event)) {
@@ -18,7 +23,7 @@ struct EventCardView : View {
                 
                 // Event title and info
                 VStack(alignment: .leading, spacing: 10) {
-                    Image(image)
+                    getSafeImage(named: event.values.imageUrl)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: (UIScreen.main.bounds.width - 48), height: 200)
@@ -89,7 +94,7 @@ struct EventCardView : View {
 
 struct EventCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
-        EventCardView(event: gospelForum, image: "gospelforum")
+        let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23" , imageUrl: "gospelforum"))
+        EventCardView(event: gospelForum)
     }
 }

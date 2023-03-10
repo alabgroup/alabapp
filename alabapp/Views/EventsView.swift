@@ -27,7 +27,7 @@ struct EventsView: View {
                         .font(MyFont.title)
                         .frame(width: screenW, height: 35, alignment: .topLeading)
                     
-                    EventCardView(event: network.events.first ?? Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23")), image: "gospelforum")
+                    EventCardView(event: network.events.first ?? EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23", imageUrl: "gospelforum")))
                     
                 }.padding(.bottom, 30)
                 
@@ -37,7 +37,7 @@ struct EventsView: View {
                         .font(MyFont.title)
                         .frame(width: screenW, height: 24, alignment: .topLeading)
                     ForEach (network.events) { event in
-                        EventCardView(event: event, image: "hyc")
+                        EventCardView(event: event)
                     }
                 }.padding(.bottom, 30)
             }.onAppear {

@@ -34,12 +34,12 @@ struct RowContent: Decodable {
     var eventType: Int
 }
 
-// The schedule has the list of all of the agenda items for the entire event.
-struct AnnouncementsList : Decodable {
-    var items: [Announcement]
+// The announcments for the main page.
+struct AnnouncementList : Decodable {
+    var items: [AnnouncementMeta]
 }
 
-struct Announcement : Decodable, Identifiable {
+struct AnnouncementMeta : Decodable, Identifiable {
     var id: String
     var index: Int
     var values: AnnouncementContent
@@ -51,11 +51,11 @@ struct AnnouncementContent : Decodable {
 }
 
 // The location info for an event.
-struct LocationInfoList : Decodable {
-    var items: [LocationInfo]
+struct LocationList : Decodable {
+    var items: [LocationMeta]
 }
 
-struct LocationInfo : Decodable, Identifiable {
+struct LocationMeta : Decodable, Identifiable {
     var id: String
     var index: Int
     var values: LocationContent
@@ -67,12 +67,28 @@ struct LocationContent : Decodable {
     var icon: String
 }
 
-// The event table.
-struct EventList : Decodable {
-    var items: [Event]
+// The information for a given event.
+struct InfoList : Decodable {
+    var items: [InfoMeta] /////////
 }
 
-struct Event : Decodable, Identifiable {
+struct InfoMeta : Decodable, Identifiable {
+    var id: String
+    var index: Int
+    var values: InfoContent
+}
+
+struct InfoContent : Decodable {
+    var title: String
+    var message: String
+}
+
+// The event table.
+struct EventList : Decodable {
+    var items: [EventMeta]
+}
+
+struct EventMeta : Decodable, Identifiable {
     var id: String
     var index: Int
     var values: EventContent
@@ -84,17 +100,19 @@ struct EventContent : Decodable {
     var datesString: String
     var audience: String
     var codaName: String
+    var imageUrl: String
 }
 
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
 
 class Network: ObservableObject {
     @Published var days = [Day]()
-    @Published var announcements = [Announcement]()
-    @Published var locationInfo = [LocationInfo]()
-    @Published var events = [Event]()
+    @Published var announcements = [AnnouncementMeta]()
+    @Published var locationInfo = [LocationMeta]()
+    @Published var information = [InfoMeta]()
+    @Published var events = [EventMeta]()
     
-    func getSchedule(event: Event) {
+    func getSchedule(event: EventMeta) {
         
         self.days = [Day]()
         guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/schedule_\(event.values.codaName)/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
@@ -126,7 +144,7 @@ class Network: ObservableObject {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else {return }
-            let decodedItems = try! JSONDecoder().decode(AnnouncementsList.self, from: data)
+            let decodedItems = try! JSONDecoder().decode(AnnouncementList.self, from: data)
             
             DispatchQueue.main.async {
                 self.announcements = decodedItems.items.sorted {$0.index < $1.index}
@@ -135,14 +153,14 @@ class Network: ObservableObject {
         task.resume()
     }
     
-    func getLocationContent(event: Event) {
+    func getLocationContent(event: EventMeta) {
         guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/location_\(event.values.codaName)/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else {return }
-            let decodedItems = try! JSONDecoder().decode(LocationInfoList.self, from: data)
+            let decodedItems = try! JSONDecoder().decode(LocationList.self, from: data)
             
             DispatchQueue.main.async {
                 self.locationInfo = decodedItems.items.sorted {$0.index < $1.index}
@@ -150,7 +168,23 @@ class Network: ObservableObject {
         }
         task.resume()
     }
-    
+
+    func getInfoContent(event: EventMeta) {
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/info_\(event.values.codaName)/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {return }
+            let decodedItems = try! JSONDecoder().decode(InfoList.self, from: data)
+            
+            DispatchQueue.main.async {
+                self.information = decodedItems.items.sorted {$0.index < $1.index}
+            }
+        }
+        task.resume()
+    }
+
     func getEvents() {
         guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/events/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)

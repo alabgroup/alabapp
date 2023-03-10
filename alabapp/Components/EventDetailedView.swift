@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventDetailedView: View {
     
-    var event: Event
+    var event: EventMeta
     let tabW = CGFloat((UIScreen.main.bounds.width - 48.0) / 4.0)
     enum Page {
         case Info
@@ -68,7 +68,7 @@ struct EventDetailedView: View {
                         
                         TabView (selection: $currentPage) {
                             
-                            InfoView()
+                            InfoView(event: event)
                                 .tag(Page.Info)
                             ScheduleView(event: event)
                                 .tag(Page.Schedule)
@@ -93,7 +93,7 @@ struct EventDetailedView: View {
 struct EventDetailedView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let gospelForum = Event(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23"))
+        let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23", imageUrl: "gospelforum"))
         
         EventDetailedView(event: gospelForum)
     }
