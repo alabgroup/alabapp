@@ -121,9 +121,11 @@ struct EventContent : Decodable {
     var name: String
     var location: String
     var datesString: String
+    var isHappeningNow: Int
     var audience: String
     var codaName: String
-    var imageUrl: String
+    var posterUrl: String
+    var detailedViewBannerUrl: String
 }
 
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
