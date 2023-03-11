@@ -8,34 +8,33 @@
 import SwiftUI
 
 struct InfoView: View {
+    let event: EventMeta
+    @EnvironmentObject var network: Network
+    
     var body: some View {
         ScrollView {
             VStack (alignment: .leading, spacing: 10) {
-                Text("Policies")
-                    .font(MyFont.title)
-                    .padding(.top, 20)
-                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
-                    .font(MyFont.caption)
-                
-                Text("More policies")
-                    .font(MyFont.title)
-                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
-                    .font(MyFont.caption)
-                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved.")
-                    .font(MyFont.caption)
-                
-                Text("Even more policies")
-                    .font(MyFont.title)
-                Text("You may not record or stream any portion of this event. You may be removed from the venue upon the first violation. Rights to presentations made at Gospel Forum are reserved, and unauthorized use and recordings are strictly prohibited. We will make recordings available for free via YouTube a few weeks after the event.")
-                    .font(MyFont.caption)
+                ForEach(network.information) { information in
+                    VStack {
+                        Text(information.values.title)
+                            .font(MyFont.title3)
+                    }.padding(.top, 20)
+                    Text(information.values.message)
+                        .font(MyFont.caption)
+                }
             }.padding(.horizontal, 24)
+                .onAppear {
+                    network.getInfoContent(event: event)
+                }
         }
-        
     }
 }
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
+        
+        let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23", imageUrl: "gospelforum"))
+        
+        InfoView(event: gospelForum).environmentObject(Network())
     }
 }
