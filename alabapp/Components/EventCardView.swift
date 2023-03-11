@@ -16,38 +16,63 @@ struct EventCardView : View {
         return Image(uiImage: uiImage)
     }
     
+    @ViewBuilder
+    func view(for phase: AsyncImagePhase) -> some View {
+        switch phase {
+        case .empty:
+            ProgressView()
+                .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2)
+        case .success(let image):
+            image.resizable()
+                .scaledToFill()
+                .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2, alignment: .center)
+        case .failure(let error):
+            Image(default_image)
+//            VStack(spacing: 16) {
+//                Image(systemName: "xmark.octagon.fill")
+//                    .foregroundColor(.red)
+//                Text(error.localizedDescription)
+//                    .multilineTextAlignment(.center)
+//            }
+        @unknown default:
+            Text("Unknown")
+                .foregroundColor(.gray)
+        }
+        
+    }
+    
     var body: some View {
         // Event card
         ZStack (alignment: .topLeading) {
             
             // Event title and info
-            ZStack() {
-                
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(event.values.name)
-                        .font(MyFont.title3)
-                        .foregroundColor(Color.black)
-                        .padding(.leading, 20)
+            NavigationLink(destination: EventDetailedView(event: event)) {
+                ZStack() {
                     
-                    HStack (spacing: 10) {
-                        Image(systemName:"calendar")
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(event.values.name)
+                            .font(MyFont.title3)
                             .foregroundColor(Color.black)
-                        Text(event.values.datesString)
-                            .font(MyFont.callout)
-                            .foregroundColor(Color.black)
-                    }.padding(.leading, 20)
-                    
-                    HStack (spacing: 10) {
-                        Image(systemName:"mappin.and.ellipse")
-                            .foregroundColor(Color.black)
-                        Text(event.values.location)
-                            .font(MyFont.callout)
-                            .foregroundColor(Color.black)
-                    }.padding(.leading, 20)
-                    
-                    HStack {
-                        // Learn more button
-                        NavigationLink(destination: EventDetailedView(event: event)) {
+                            .padding(.leading, 20)
+                        
+                        HStack (spacing: 10) {
+                            Image(systemName:"calendar")
+                                .foregroundColor(Color.black)
+                            Text(event.values.datesString)
+                                .font(MyFont.callout)
+                                .foregroundColor(Color.black)
+                        }.padding(.leading, 20)
+                        
+                        HStack (spacing: 10) {
+                            Image(systemName:"mappin.and.ellipse")
+                                .foregroundColor(Color.black)
+                            Text(event.values.location)
+                                .font(MyFont.callout)
+                                .foregroundColor(Color.black)
+                        }.padding(.leading, 20)
+                        
+                        HStack {
+                            // Learn more button
                             ZStack {
                                 Capsule()
                                     .frame(width: 76, height: 19)
@@ -55,46 +80,40 @@ struct EventCardView : View {
                                 Text("Learn more")
                                     .font(MyFont.caption)
                                     .foregroundColor(Color.white)
-                            }.padding(.leading, 10)}
-                        
-                        Spacer()
-                        
-                        // Audience pills
-                        ZStack {
-                            Capsule()
-                                .frame(width: 76, height: 19)
-                                .foregroundColor(Color(red: 1, green: 0.921, blue: 0.642))
-                            Text("Students")
-                                .font(MyFont.caption)
-                                .foregroundColor(Color.black)
-                        }.padding(.leading, 10)
-                        ZStack {
-                            Capsule()
-                                .frame(width: 76, height: 19)
-                                .foregroundColor(Color(red: 0.908, green: 0.908, blue: 0.908))
-                            Text("Public")
-                                .font(MyFont.caption)
-                                .foregroundColor(Color.black)
-                        }.padding(.leading, 3)
-                    }.padding(.horizontal, 10)
-                }.background(Rectangle()
-                    .fill(MyFont.lightestGray)
-                    .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48) * 0.4)
-                    .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 2))
-                
-                AsyncImage(url: URL(string: event.values.posterUrl)) {image in
-                    image.resizable()
-                        .scaledToFill()
-                        .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2, alignment: .center)
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2)
-                }.frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2)
-                    .offset(y: -164)
-                    .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 0)
-                
+                            }.padding(.leading, 10)
+                            
+                            Spacer()
+                            
+                            // Audience pills
+                            ZStack {
+                                Capsule()
+                                    .frame(width: 76, height: 19)
+                                    .foregroundColor(Color(red: 1, green: 0.921, blue: 0.642))
+                                Text("Students")
+                                    .font(MyFont.caption)
+                                    .foregroundColor(Color.black)
+                            }.padding(.leading, 10)
+                            ZStack {
+                                Capsule()
+                                    .frame(width: 76, height: 19)
+                                    .foregroundColor(Color(red: 0.908, green: 0.908, blue: 0.908))
+                                Text("Public")
+                                    .font(MyFont.caption)
+                                    .foregroundColor(Color.black)
+                            }.padding(.leading, 3)
+                        }.padding(.horizontal, 10)
+                    }.background(Rectangle()
+                        .fill(MyFont.lightestGray)
+                        .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48) * 0.4)
+                        .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 2))
+                    
+                    AsyncImage(url: URL(string: event.values.posterUrl), content: view)
+                    .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2)
+                        .offset(y: -165)
+                        .shadow(color: .black.opacity(0.3), radius: 2, x: 2, y: 0)
+                    
+                }
             }
-            
         }.frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48))
         
     }
