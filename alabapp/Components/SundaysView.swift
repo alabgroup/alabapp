@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SundaysView: View {
     
+    @EnvironmentObject var network: Network
+    
     // Attempt to open Youtube if it is installed in the user's
     // device. Fall back to opening their web browser.
     func openYoutube(youtubeId: String) {
@@ -68,31 +70,35 @@ struct SundaysView: View {
                 HStack {
                     Image("building")
                         .padding(.leading, 10)
-                    Text(toggleToNewYork ? "141st St & Amsterdam Ave, Manhattan" : "929 Mass Ave, Cambridge")
-                        .font(MyFont.callout)
-                        .foregroundColor(MyFont.black)
+                    Text(toggleToNewYork ? network.sundayService.first(where: { $0.values.city == "New York City" })?.values.address ??
+                         "141st St & Amsterdam Ave, Manhattan" : network.sundayService.first(where: { $0.values.city == "Boston" })?.values.address ?? "929 Mass Ave, Cambridge")
+                    .font(MyFont.callout)
+                    .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("time")
                         .padding(.leading, 10)
-                    Text(toggleToNewYork ? "Service starts at 10:30 AM" : "Service starts at 4:30 PM")
-                        .font(MyFont.callout)
-                        .foregroundColor(MyFont.black)
+                    Text("Service starts at " + (toggleToNewYork ? network.sundayService.first(where: { $0.values.city == "New York City" })?.values.serviceTime ??
+                         "10:30 AM" : network.sundayService.first(where: { $0.values.city == "Boston" })?.values.serviceTime ?? "4:30 PM"))
+                    .font(MyFont.callout)
+                    .foregroundColor(MyFont.black)
                 }
                 HStack {
                     Image("personcheck")
                         .padding(.leading, 10)
-                    Text(toggleToNewYork ? " Open to all" : " Open to students")
-                        .font(MyFont.callout)
-                        .foregroundColor(MyFont.black)
-                }
-                HStack {
-                    Image("chat")
-                        .padding(.leading, 10)
-                    Text("Contact us to attend in person")
+                    Text(toggleToNewYork ? network.sundayService.first(where: { $0.values.city == "New York City" })?.values.audienceString ?? " Open to all" : network.sundayService.first(where: { $0.values.city == "Boston" })?.values.audienceString ?? " Open to students")
                         .font(MyFont.callout)
                         .foregroundColor(MyFont.black)
                     Spacer()
+                }
+                if !toggleToNewYork { HStack {
+                    Image("chat")
+                        .padding(.leading, 10)
+                    Text(network.sundayService.first(where: { $0.values.city == "Boston" })?.values.howToAttend ?? "Contact us to attend in person")
+                        .font(MyFont.callout)
+                        .foregroundColor(MyFont.black)
+                }
+                    
                 }
             }.frame(width: pillWidth)
             
@@ -103,18 +109,18 @@ struct SundaysView: View {
                             .frame(width:130, height:51)
                             .foregroundColor(Color(red: 0.02, green: 0.176, blue: 0.408))
                         Button(action: {
-                            openYoutube(youtubeId: "McJAL7aaLvs")
-                        }) {Text("Stream: Feb 19")
+                            openYoutube(youtubeId: network.sundayService.first(where: {$0.values.city == "New York City" })?.values.thisWeekLink ?? "McJAL7aaLvs")
+                        }) {Text("Stream: " + (network.sundayService.first(where: {$0.values.city == "New York City" })?.values.thisWeekDate ?? "Feb 19"))
                                 .font(MyFont.subheadline)
-                                .foregroundColor(MyFont.white)}
+                            .foregroundColor(MyFont.white)}
                     }
                     ZStack {
                         Capsule()
                             .frame(width:130, height:51)
                             .foregroundColor(Color(red: 0.961, green: 0.961, blue: 0.961))
                         Button(action:{
-                            openYoutube(youtubeId: "oZO2uuRfUuA")
-                        }) {Text("Watch: Feb 12")
+                            openYoutube(youtubeId: network.sundayService.first(where: {$0.values.city == "New York City" })?.values.lastWeekLink ?? "oZO2uuRfUuA")
+                        }) {Text("Watch: " + (network.sundayService.first(where: {$0.values.city == "New York City" })?.values.lastWeekDate ?? "Feb 12"))
                                 .font(MyFont.subheadline)
                                 .foregroundColor(MyFont.lightBlue)
                         }
@@ -123,12 +129,14 @@ struct SundaysView: View {
                 
             }
             
+        }.onAppear {
+            network.getSundayService()
         }
     }
 }
 
 struct SundaysView_Previews: PreviewProvider {
     static var previews: some View {
-        SundaysView()
+        SundaysView().environmentObject(Network())
     }
 }
