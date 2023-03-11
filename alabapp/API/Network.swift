@@ -188,9 +188,10 @@ class Network: ObservableObject {
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else {return }
             let decodedItems = try! JSONDecoder().decode(AnnouncementList.self, from: data)
-            
+            let formatter = ISO8601DateFormatter()
+            let date = Date()
             DispatchQueue.main.async {
-                self.announcements = decodedItems.items.sorted {$0.index < $1.index}
+                self.announcements = decodedItems.items.sorted {$0.index < $1.index}.filter {announcementMeta in return announcementMeta.values.expiration > formatter.string(from: date)}
             }
         }
         task.resume()
