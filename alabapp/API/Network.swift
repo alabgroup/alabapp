@@ -69,7 +69,7 @@ struct LocationContent : Decodable {
 
 // The information for a given event.
 struct InfoList : Decodable {
-    var items: [InfoMeta] /////////
+    var items: [InfoMeta]
 }
 
 struct InfoMeta : Decodable, Identifiable {
