@@ -15,30 +15,35 @@ struct EventsView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView (showsIndicators: false) {
                 VStack (spacing: 20) {
                     Text("Events")
                         .fontWeight(.medium)
                         .font(MyFont.largeTitle)
                         .frame(width: screenW, height: 30, alignment: .center)
-                    
-                    Text("Happening Now")
-                        .fontWeight(.medium)
-                        .font(MyFont.title)
-                        .frame(width: screenW, height: 35, alignment: .topLeading)
-                    
-                    EventCardView(event: network.events.first ?? EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23", imageUrl: "gospelforum")))
-                    
-                }.padding(.bottom, 30)
+                    if !network.events.filter {$0.values.isHappeningNow == 1}.isEmpty {
+                        Text("Happening Now")
+                            .fontWeight(.medium)
+                            .font(MyFont.title)
+                            .frame(width: screenW, height: 35, alignment: .topLeading)
+                        
+                        
+                        ForEach (network.events.filter {$0.values.isHappeningNow == 1}) { event in
+                            EventCardView(event: event)
+                                .fixedSize()
+                        }.offset(y: 70)
+                    }
+                }
                 
                 VStack (spacing: 30) {
                     Text("Upcoming")
                         .fontWeight(.medium)
                         .font(MyFont.title)
                         .frame(width: screenW, height: 24, alignment: .topLeading)
-                    ForEach (network.events) { event in
+                    ForEach (network.events.filter {$0.values.isHappeningNow == 0}) { event in
                         EventCardView(event: event)
-                    }
+                            .fixedSize()
+                    }.offset(y: 80)
                 }.padding(.bottom, 30)
             }.onAppear {
                 network.getEvents()

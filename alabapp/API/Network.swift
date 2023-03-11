@@ -7,6 +7,29 @@
 
 import Foundation
 
+// The Sunday Service info for the main page.
+struct SundayServiceList : Decodable {
+    var items: [SundayServiceMeta]
+}
+
+struct SundayServiceMeta : Decodable, Identifiable {
+    var id: String
+    var index: Int
+    var values: SundayServiceContent
+}
+
+struct SundayServiceContent : Decodable {
+    var city: String
+    var serviceTime: String
+    var address: String
+    var audienceString: String
+    var howToAttend: String
+    var thisWeekDate: String
+    var thisWeekLink: String
+    var lastWeekDate: String
+    var lastWeekLink: String
+}
+
 // The schedule has the list of all of the agenda items for the entire event.
 struct Schedule : Decodable {
     var items: [AgendaItem]
@@ -98,9 +121,11 @@ struct EventContent : Decodable {
     var name: String
     var location: String
     var datesString: String
+    var isHappeningNow: Int
     var audience: String
     var codaName: String
-    var imageUrl: String
+    var posterUrl: String
+    var detailedViewBannerUrl: String
 }
 
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
@@ -111,6 +136,24 @@ class Network: ObservableObject {
     @Published var locationInfo = [LocationMeta]()
     @Published var information = [InfoMeta]()
     @Published var events = [EventMeta]()
+    @Published var sundayService = [SundayServiceMeta]()
+    
+    
+    func getSundayService() {
+        guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/sundayServiceInfo/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {return }
+            let decodedItems = try! JSONDecoder().decode(SundayServiceList.self, from: data)
+            
+            DispatchQueue.main.async {
+                self.sundayService = decodedItems.items.sorted {$0.index < $1.index}
+            }
+        }
+        task.resume()
+    }
     
     func getSchedule(event: EventMeta) {
         
