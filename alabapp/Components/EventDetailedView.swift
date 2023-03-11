@@ -95,6 +95,6 @@ struct EventDetailedView_Previews: PreviewProvider {
         
         let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", audience: "Open to all", codaName: "gospelForum23", imageUrl: "gospelforum"))
         
-        EventDetailedView(event: gospelForum)
+        EventDetailedView(event: gospelForum).environmentObject(Network())
     }
 }
