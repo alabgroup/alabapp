@@ -19,14 +19,7 @@ struct EventDetailedView: View {
     }
     
     @State private var currentPage = Page.Info
-    let default_image = "AlabCityView"
-//
-//    func getSafeImage(named: String) -> Image {
-//        return AsyncImage(url: URL(string: named))
-////       let uiImage =  (UIImage(named: named) ?? UIImage(named: default_image))!
-////       return Image(uiImage: uiImage)
-//    }
-//
+
     func pageButton(_ select: Page, _ icon: String, _ title: String) -> some View {
         return Button {
             currentPage = select
