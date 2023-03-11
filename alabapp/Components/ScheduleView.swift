@@ -49,7 +49,7 @@ struct ScheduleView: View {
                 .foregroundColor(eventType == EventType.Meal ? MyFont.mediumBlue : MyFont.yellow)
                 .padding(.trailing, 8)
                 .cornerRadius(8)
-            Spacer(minLength: 10)
+            Spacer(minLength: 4)
             Grid() {
                 GridRow {
                     Text(startTime)
@@ -78,7 +78,6 @@ struct ScheduleView: View {
                 .fill(MyFont.lightestGray)
                 .cornerRadius(8)
                 .frame(width: scheduleW, height: 80)
-                .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 2)
         ).padding(.horizontal, 24)
     }
     

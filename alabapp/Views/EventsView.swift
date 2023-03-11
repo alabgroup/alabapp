@@ -21,20 +21,18 @@ struct EventsView: View {
                         .fontWeight(.medium)
                         .font(MyFont.largeTitle)
                         .frame(width: screenW, height: 30, alignment: .center)
-                    
-                    Text("Happening Now")
-                        .fontWeight(.medium)
-                        .font(MyFont.title)
-                        .frame(width: screenW, height: 35, alignment: .topLeading)
-                    
-                    if network.events.filter {$0.values.isHappeningNow == 1}.isEmpty {
-                        Text("There are no events happening now.")
-                    } else {
+                    if !network.events.filter {$0.values.isHappeningNow == 1}.isEmpty {
+                        Text("Happening Now")
+                            .fontWeight(.medium)
+                            .font(MyFont.title)
+                            .frame(width: screenW, height: 35, alignment: .topLeading)
+                        
+                        
                         ForEach (network.events.filter {$0.values.isHappeningNow == 1}) { event in
                             EventCardView(event: event)
                                 .fixedSize()
-                        }.offset(y: 70)}
-                    
+                        }.offset(y: 70)
+                    }
                 }
                 
                 VStack (spacing: 30) {
