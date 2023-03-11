@@ -58,10 +58,10 @@ struct ContactView: View {
                 Spacer()
                 Button(action: {openMessenger()}) {
                     HStack {
-                        Image("messenger")
+                        Image("messengerIcon")
                             .resizable()
-                            .frame(width: 24, height: 24)
-                        Text("Chat")
+                            .frame(width: 20, height: 20)
+                        Text("@alabgrp")
                             .font(MyFont.caption)
                     }
                     
@@ -71,23 +71,12 @@ struct ContactView: View {
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.black)
-                        Text("Email")
+                        Text("support@alab.org")
                             .font(MyFont.caption)
                     }
                     
                 }
                 Spacer()
-                Button (action: {callAlab()}) {
-                    HStack {
-                        Image(systemName: "phone")
-                            .foregroundColor(.black)
-                        Text("Phone")
-                            .font(MyFont.caption)
-                    }
-                    
-                }
-                Spacer()
-                
             }
         }
         .frame(width: 325)
