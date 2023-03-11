@@ -28,7 +28,11 @@ struct EventDetailedView: View {
                 Image(systemName: icon)
                 Text(title)
                     .font(MyFont.caption)
-            } .frame(width: tabW)
+                if currentPage == select {
+                    Rectangle()
+                      .frame(height: 1)
+                }
+            }.frame(width: tabW)
         } .foregroundColor( currentPage == select ? Color.black : Color.gray )
     }
     
@@ -63,7 +67,7 @@ struct EventDetailedView: View {
                                 pageButton(Page.Schedule, "calendar", "Schedule")
                                 pageButton(Page.Location, "mappin", "Location")
                                 pageButton(Page.Contact, "hand.raised", "Contact")
-                            }
+                            }.padding(.horizontal, 12)
                         }
                         
                         TabView (selection: $currentPage) {
