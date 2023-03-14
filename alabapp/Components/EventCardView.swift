@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventCardView : View {
     let event: EventMeta
-    let default_image = "AlabCityView"
+    let default_image = "city"
     
     func getSafeImage(named: String) -> Image {
         let uiImage =  (UIImage(named: named) ?? UIImage(named: default_image))!
@@ -107,14 +107,20 @@ struct EventCardView : View {
                         .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48) * 0.4)
                         .shadow(color: .black.opacity(0.3), radius: 3, x: 2, y: 2))
                     
-                    AsyncImage(url: URL(string: event.values.posterUrl), content: view)
-                    .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2)
-                        .offset(y: -165)
-                        .shadow(color: .black.opacity(0.3), radius: 2, x: 2, y: 0)
-                    
+                    if !event.values.posterUrl.isEmpty {
+                        AsyncImage(url: URL(string: event.values.posterUrl), content: view)
+                            .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/16 * 9)
+                            .offset(y: -165)
+                            .shadow(color: .black.opacity(0.3), radius: 2, x: 2, y: 0)
+                    } else { Image(default_image)
+                            .resizable()
+                            .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/16 * 9)
+                            .offset(y: -165)
+                            .shadow(color: .black.opacity(0.3), radius: 2, x: 2, y: 0)
+                    }
                 }
             }
-        }.frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48))
+        }.frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48) * 0.9625)
         
     }
     

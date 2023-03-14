@@ -27,11 +27,10 @@ struct EventsView: View {
                             .font(MyFont.title)
                             .frame(width: screenW, height: 35, alignment: .topLeading)
                         
-                        
                         ForEach (network.events.filter {$0.values.isHappeningNow == 1}) { event in
                             EventCardView(event: event)
                                 .fixedSize()
-                        }.offset(y: 70)
+                        }.offset(y: 80)
                     }
                 }
                 
