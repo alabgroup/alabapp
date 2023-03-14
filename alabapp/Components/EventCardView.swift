@@ -41,6 +41,17 @@ struct EventCardView : View {
         
     }
     
+    func pillColor(_ pillName: String) -> Color {
+        switch pillName {
+        case "Students":
+            return MyFont.yellow
+        case "Public":
+            return MyFont.lightGray
+        default:
+            return MyFont.lightBlue
+        }
+    }
+    
     var body: some View {
         // Event card
         ZStack (alignment: .topLeading) {
@@ -85,22 +96,16 @@ struct EventCardView : View {
                             Spacer()
                             
                             // Audience pills
-                            ZStack {
-                                Capsule()
-                                    .frame(width: 76, height: 19)
-                                    .foregroundColor(Color(red: 1, green: 0.921, blue: 0.642))
-                                Text("Students")
-                                    .font(MyFont.caption)
-                                    .foregroundColor(Color.black)
-                            }.padding(.leading, 10)
-                            ZStack {
-                                Capsule()
-                                    .frame(width: 76, height: 19)
-                                    .foregroundColor(Color(red: 0.908, green: 0.908, blue: 0.908))
-                                Text("Public")
-                                    .font(MyFont.caption)
-                                    .foregroundColor(Color.black)
-                            }.padding(.leading, 3)
+                            ForEach (event.values.audiencePills.components(separatedBy: ","), id: \.self) { pillName in
+                                ZStack {
+                                    Capsule()
+                                        .frame(width: 76, height: 19)
+                                        .foregroundColor(pillColor(pillName))
+                                    Text(pillName)
+                                        .font(MyFont.caption)
+                                        .foregroundColor(Color.black)
+                                }.padding(.leading, 10)
+                            }
                         }.padding(.horizontal, 10)
                     }.background(Rectangle()
                         .fill(MyFont.lightestGray)
@@ -128,7 +133,7 @@ struct EventCardView : View {
 
 struct EventCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", isHappeningNow: 1, audience: "Open to all", codaName: "gospelForum23" , posterUrl: "https://codahosted.io/docs/t3DP5F4Tol/blobs/bl-RZFCf8klgw/31a44da2c6f406f4a003ec17d6f789b232f9705dc813bf00dc299ee1ef7da22266f711906c17d2a31acb6def58dc8c710550cb0fb2d22d7cb990e97bdc305a563bf32b0734647be30c430a38858b129b12f9e1d66861e279e034da0701a4ce2b22f490d9", detailedViewBannerUrl: "https://codahosted.io/docs/t3DP5F4Tol/blobs/bl--EJLBQhYZ3/6bf1018f29524ece9e915356f446b0195dabb0453b4327dbbcabfd6bdd656fee7a468387b683793e58e8063a77b0e6d0e3bf89e8b133b089d289a1e13c1d7833be1ef9399c9939d4028a9b4940bc63a5c3cde8d2b64e028c62df02640a20edc4683aa9f0"))
+        let gospelForum = EventMeta(id: "Gospel Forum", index: 0, values: EventContent(name: "Gospel Forum", location: "Hilton Parsippany, NJ", datesString: "April 21-23, 2023", isHappeningNow: 1, audience: "Open to all", codaName: "gospelForum23" , posterUrl: "https://codahosted.io/docs/t3DP5F4Tol/blobs/bl-RZFCf8klgw/31a44da2c6f406f4a003ec17d6f789b232f9705dc813bf00dc299ee1ef7da22266f711906c17d2a31acb6def58dc8c710550cb0fb2d22d7cb990e97bdc305a563bf32b0734647be30c430a38858b129b12f9e1d66861e279e034da0701a4ce2b22f490d9", detailedViewBannerUrl: "https://codahosted.io/docs/t3DP5F4Tol/blobs/bl--EJLBQhYZ3/6bf1018f29524ece9e915356f446b0195dabb0453b4327dbbcabfd6bdd656fee7a468387b683793e58e8063a77b0e6d0e3bf89e8b133b089d289a1e13c1d7833be1ef9399c9939d4028a9b4940bc63a5c3cde8d2b64e028c62df02640a20edc4683aa9f0", audiencePills: "Students,Public"))
         EventCardView(event: gospelForum)
     }
 }

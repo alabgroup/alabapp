@@ -127,6 +127,7 @@ struct EventContent : Decodable {
     var codaName: String
     var posterUrl: String
     var detailedViewBannerUrl: String
+    var audiencePills: String
 }
 
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
