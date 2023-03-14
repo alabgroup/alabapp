@@ -62,7 +62,7 @@ struct BottomSheetView: View{
          
                 Spacer()
                 Text("Checks and Cash")
-                    .font(MyFont.largeTitle)
+                    .font(MyFont.title2)
                     .fontWeight(.medium)
                 Spacer()
                 Text("You use our donation box located by the exits of the Ballroom to give by check.\n \n**Please make checks payable to Alabaster Group**, so that we are able to process and receipt gifts.\n \nTo receive a receipt for cash gifts, please fill out an envelope and include your cash in the envelope. You may also use our envelopes to make a gift by card.")
