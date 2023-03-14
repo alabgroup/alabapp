@@ -55,7 +55,8 @@ struct EventDetailedView: View {
                 
                 
                 VStack(spacing: 20) {
-                    AnnouncementsView(announcements: network.announcements)
+                    // Only pull the announcements relevant to that event
+                    AnnouncementsView(announcements: network.announcements.filter {announcement in announcement.values.event == event.values.codaName})
                         .padding(.bottom, 6)
                     
                     // Navigation bar for Events Tab View

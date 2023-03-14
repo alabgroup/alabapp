@@ -70,6 +70,7 @@ struct AnnouncementMeta : Decodable, Identifiable {
 
 struct AnnouncementContent : Decodable {
     var message: String
+    var event: String
     var expiration: String
 }
 
