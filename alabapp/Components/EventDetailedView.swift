@@ -19,7 +19,7 @@ struct EventDetailedView: View {
         case Contact
     }
     
-    @State private var currentPage = Page.Info
+    @State private var currentPage = Page.Schedule
 
     func pageButton(_ select: Page, _ icon: String, _ title: String) -> some View {
         return Button {
@@ -63,8 +63,8 @@ struct EventDetailedView: View {
                     VStack() {
                         ScrollView(.horizontal) {
                             HStack() {
-                                pageButton(Page.Info, "info.bubble", "Info")
                                 pageButton(Page.Schedule, "calendar", "Schedule")
+                                pageButton(Page.Info, "info.bubble", "Info")
                                 pageButton(Page.Location, "mappin", "Location")
                                 pageButton(Page.Contact, "hand.raised", "Contact")
                             }.padding(.horizontal, 12)
@@ -72,10 +72,10 @@ struct EventDetailedView: View {
                         
                         TabView (selection: $currentPage) {
                             
-                            InfoView(event: event)
-                                .tag(Page.Info)
                             ScheduleView(event: event)
                                 .tag(Page.Schedule)
+                            InfoView(event: event)
+                                .tag(Page.Info)
                             LocationView(event: event)
                                 .tag(Page.Location)
                             ContactView()
