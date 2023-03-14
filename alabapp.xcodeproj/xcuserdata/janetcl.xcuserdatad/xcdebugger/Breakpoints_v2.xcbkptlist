@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "46F2BEF2-B1F9-40D8-A242-4307762F59BE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA7F69C6-4CFA-4306-BC8B-3A9DD6952916"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "alabapp/API/ScheduleAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getSchedule()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA7F69C6-4CFA-4306-BC8B-3A9DD6952916 - 45530c3ddb9ee85b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in alabapp.ScheduleAPI.getData() -&gt; ()"
+                  moduleName = "alabapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/janetcl/alabapp/alabapp/API/ScheduleAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "DA7F69C6-4CFA-4306-BC8B-3A9DD6952916 - 979352af8dcdd191"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 ((key: Swift.String, value: Swift.Array&lt;alabapp.AgendaItem&gt;), (key: Swift.String, value: Swift.Array&lt;alabapp.AgendaItem&gt;)) -&gt; Swift.Bool in closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in alabapp.ScheduleAPI.getData() -&gt; ()"
+                  moduleName = "alabapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/janetcl/alabapp/alabapp/API/ScheduleAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

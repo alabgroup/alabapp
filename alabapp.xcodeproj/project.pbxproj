@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		00F19ECB29AA89420010932B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F19ECA29AA89420010932B /* ContactView.swift */; };
 		00F19ECD29AB117D0010932B /* GivingIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F19ECC29AB117D0010932B /* GivingIconsView.swift */; };
+		C82046B829B0621B0081BC3C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82046B729B0621B0081BC3C /* InfoView.swift */; };
+		C82046BA29B062320081BC3C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82046B929B062320081BC3C /* ScheduleView.swift */; };
+		C82046BC29B06BDF0081BC3C /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82046BB29B06BDF0081BC3C /* LocationView.swift */; };
+		C8228AA429AABDB500FB4FE7 /* SundaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AA329AABDB500FB4FE7 /* SundaysView.swift */; };
+		C8228AA629AABDE300FB4FE7 /* AnnouncementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */; };
+		C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */; };
+		C8228AAD29AB0A0300FB4FE7 /* EventDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */; };
+		C85294C029B3DE0D00AECE38 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85294BF29B3DE0D00AECE38 /* Network.swift */; };
 		F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35329AA80CA00DDBC45 /* alabappApp.swift */; };
 		F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35529AA80CA00DDBC45 /* ContentView.swift */; };
 		F625B35829AA80CC00DDBC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F625B35729AA80CC00DDBC45 /* Assets.xcassets */; };
@@ -19,6 +27,8 @@
 		F625B38429AA81D900DDBC45 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B38329AA81D900DDBC45 /* EventsView.swift */; };
 		F625B38829AA820000DDBC45 /* GiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B38729AA820000DDBC45 /* GiveView.swift */; };
 		F625B38A29AA820800DDBC45 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B38929AA820700DDBC45 /* HomeView.swift */; };
+		F6DF808629B039800071E980 /* MyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF808529B039800071E980 /* MyFont.swift */; };
+		F6DF808929B03AE10071E980 /* Raleway-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6DF808829B03AE10071E980 /* Raleway-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +51,14 @@
 /* Begin PBXFileReference section */
 		00F19ECA29AA89420010932B /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		00F19ECC29AB117D0010932B /* GivingIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivingIconsView.swift; sourceTree = "<group>"; };
+		C82046B729B0621B0081BC3C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		C82046B929B062320081BC3C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		C82046BB29B06BDF0081BC3C /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		C8228AA329AABDB500FB4FE7 /* SundaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SundaysView.swift; sourceTree = "<group>"; }
+		C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
+		C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailedView.swift; sourceTree = "<group>"; };
+		C85294BF29B3DE0D00AECE38 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F625B35029AA80CA00DDBC45 /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F625B35329AA80CA00DDBC45 /* alabappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappApp.swift; sourceTree = "<group>"; };
 		F625B35529AA80CA00DDBC45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +72,9 @@
 		F625B38329AA81D900DDBC45 /* EventsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		F625B38729AA820000DDBC45 /* GiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveView.swift; sourceTree = "<group>"; };
 		F625B38929AA820700DDBC45 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F6DF808529B039800071E980 /* MyFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFont.swift; sourceTree = "<group>"; };
+		F6DF808829B03AE10071E980 /* Raleway-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F6DF808A29B043110071E980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +102,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8228AA729AABE5C00FB4FE7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C8228AA329AABDB500FB4FE7 /* SundaysView.swift */,
+				C82046B929B062320081BC3C /* ScheduleView.swift */,
+				C82046B729B0621B0081BC3C /* InfoView.swift */,
+				C8228AA529AABDE300FB4FE7 /* AnnouncementsView.swift */,
+				00F19ECA29AA89420010932B /* ContactView.swift */,
+				C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */,
+				C82046BB29B06BDF0081BC3C /* LocationView.swift */,
+				C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C85294BE29B3DDD000AECE38 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C85294BF29B3DE0D00AECE38 /* Network.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		F625B34729AA80CA00DDBC45 = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +148,14 @@
 		F625B35229AA80CA00DDBC45 /* alabapp */ = {
 			isa = PBXGroup;
 			children = (
+				C85294BE29B3DDD000AECE38 /* API */,
+				F6DF808A29B043110071E980 /* Info.plist */,
+				F6DF808729B03A8B0071E980 /* Font */,
+				C8228AA729AABE5C00FB4FE7 /* Components */,
 				F625B38229AA81CB00DDBC45 /* Views */,
 				F625B35329AA80CA00DDBC45 /* alabappApp.swift */,
 				F625B35529AA80CA00DDBC45 /* ContentView.swift */,
-				00F19ECA29AA89420010932B /* ContactView.swift */,
+				F6DF808529B039800071E980 /* MyFont.swift */,
 				F625B35729AA80CC00DDBC45 /* Assets.xcassets */,
 				F625B35929AA80CC00DDBC45 /* Preview Content */,
 			);
@@ -148,6 +196,14 @@
 				00F19ECC29AB117D0010932B /* GivingIconsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F6DF808729B03A8B0071E980 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F6DF808829B03AE10071E980 /* Raleway-VariableFont_wght.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F625B35B29AA80CC00DDBC45 /* Preview Assets.xcassets in Resources */,
+				F6DF808929B03AE10071E980 /* Raleway-VariableFont_wght.ttf in Resources */,
 				F625B35829AA80CC00DDBC45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,8 +337,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82046BC29B06BDF0081BC3C /* LocationView.swift in Sources */,
+				C8228AA429AABDB500FB4FE7 /* SundaysView.swift in Sources */,
+				C82046B829B0621B0081BC3C /* InfoView.swift in Sources */,
+				C8228AAD29AB0A0300FB4FE7 /* EventDetailedView.swift in Sources */,
 				F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */,
+				C85294C029B3DE0D00AECE38 /* Network.swift in Sources */,
 				00F19ECB29AA89420010932B /* ContactView.swift in Sources */,
+				C82046BA29B062320081BC3C /* ScheduleView.swift in Sources */,
+				C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */,
+				C8228AA629AABDE300FB4FE7 /* AnnouncementsView.swift in Sources */,
+				F6DF808629B039800071E980 /* MyFont.swift in Sources */,
 				F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */,
 				00F19ECD29AB117D0010932B /* GivingIconsView.swift in Sources */,
 				F625B38A29AA820800DDBC45 /* HomeView.swift in Sources */,
@@ -448,6 +514,7 @@
 				DEVELOPMENT_TEAM = 63JWG7D59H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = alabapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,6 +544,7 @@
 				DEVELOPMENT_TEAM = 63JWG7D59H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = alabapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
