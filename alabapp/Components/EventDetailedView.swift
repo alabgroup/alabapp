@@ -10,6 +10,7 @@ import SwiftUI
 struct EventDetailedView: View {
     
     var event: EventMeta
+    @EnvironmentObject var network: Network
     let tabW = CGFloat((UIScreen.main.bounds.width - 48.0) / 4.0)
     enum Page {
         case Info
@@ -54,7 +55,7 @@ struct EventDetailedView: View {
                 
                 
                 VStack(spacing: 20) {
-                    AnnouncementsView()
+                    AnnouncementsView(announcements: network.announcements)
                         .padding(.bottom, 6)
                     
                     // Navigation bar for Events Tab View

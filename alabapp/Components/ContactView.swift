@@ -35,15 +35,7 @@ struct ContactView: View {
         }
     }
     
-    var phoneNumber = "646-948-6900"
-    
-    // Maybe call Alabaster's phone number.
-    func callAlab() {
-        let phone = "tel://"
-        let phoneNumberFormatted = phone + phoneNumber
-        guard let url = URL(string: phoneNumberFormatted) else { return }
-        UIApplication.shared.open(url)
-    }
+    let screenW = CGFloat((UIScreen.main.bounds.width - 48.0))
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -79,7 +71,7 @@ struct ContactView: View {
                 Spacer()
             }
         }
-        .frame(width: 325)
+        .frame(width: screenW)
     }
 }
 

@@ -28,12 +28,12 @@ struct EventCardView : View {
                 .frame(width: (UIScreen.main.bounds.width - 48), height: (UIScreen.main.bounds.width - 48)/2, alignment: .center)
         case .failure(let error):
             Image(default_image)
-//            VStack(spacing: 16) {
-//                Image(systemName: "xmark.octagon.fill")
-//                    .foregroundColor(.red)
-//                Text(error.localizedDescription)
-//                    .multilineTextAlignment(.center)
-//            }
+            VStack(spacing: 16) {
+                Image(systemName: "xmark.octagon.fill")
+                    .foregroundColor(.red)
+                Text(error.localizedDescription)
+                    .multilineTextAlignment(.center)
+            }
         @unknown default:
             Text("Unknown")
                 .foregroundColor(.gray)
