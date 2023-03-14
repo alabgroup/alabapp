@@ -171,7 +171,7 @@ class Network: ObservableObject {
                 let groupedItems = Dictionary(grouping: schedule ) { String($0.values.startTime.prefix(10)) }
                 let sortedItems = groupedItems.sorted( by: { $0.0 < $1.0 })
                 for (key, value) in sortedItems {
-                    self.days.append(Day(id: key, name: key, items: value))
+                    self.days.append(Day(id: key, name: key, items: value.sorted(by: {$0.values.startTime < $1.values.startTime})))
                 }
                 
             }
@@ -188,9 +188,10 @@ class Network: ObservableObject {
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data else {return }
             let decodedItems = try! JSONDecoder().decode(AnnouncementList.self, from: data)
-            
+            let formatter = ISO8601DateFormatter()
+            let date = Date()
             DispatchQueue.main.async {
-                self.announcements = decodedItems.items.sorted {$0.index < $1.index}
+                self.announcements = decodedItems.items.sorted {$0.index < $1.index}.filter {announcementMeta in return announcementMeta.values.expiration > formatter.string(from: date)}
             }
         }
         task.resume()
@@ -229,6 +230,7 @@ class Network: ObservableObject {
     }
 
     func getEvents() {
+        
         guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/events/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("Bearer " + AuthTokenString, forHTTPHeaderField: "Authorization")
