@@ -11,16 +11,18 @@ struct AnnouncementsView: View {
     @EnvironmentObject var network: Network
     let screenW = CGFloat((UIScreen.main.bounds.width - 48.0))
 
+    var announcements: [AnnouncementMeta]
+    
     var body: some View {
         VStack (spacing: 10) {
-            if !network.announcements.isEmpty {
+            if !announcements.isEmpty {
                 Text("Announcements")
                     .fontWeight(.medium)
                     .font(MyFont.title)
                     .foregroundColor(MyFont.black)
                     .frame(width: screenW, alignment: .topLeading)
                 
-                ForEach(network.announcements) { announcementInfo in
+                ForEach(announcements) { announcementInfo in
                     Text(announcementInfo.values.message)
                         .padding(.horizontal, 6)
                         .font(MyFont.caption)
@@ -35,14 +37,12 @@ struct AnnouncementsView: View {
                         )
                 }
             }
-        }.onAppear {
-            network.getAnnouncements()
         }
     }
 }
 
 struct AnnouncementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AnnouncementsView().environmentObject(Network())
+        AnnouncementsView(announcements: [AnnouncementMeta(id: "0", index: 0, values: AnnouncementContent(message:"This is a primary announcement lalala.",event:"flowerForum",expiration:"2023-02-15T00:00:00.000-04:00")), AnnouncementMeta(id: "1", index: 1, values: AnnouncementContent(message:"This is a secondary announcement.",event:"gospelForum23", expiration:"2023-06-15T00:00:00.000-04:00")),])
     }
 }

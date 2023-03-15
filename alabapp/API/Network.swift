@@ -70,6 +70,7 @@ struct AnnouncementMeta : Decodable, Identifiable {
 
 struct AnnouncementContent : Decodable {
     var message: String
+    var event: String
     var expiration: String
 }
 
@@ -126,6 +127,8 @@ struct EventContent : Decodable {
     var codaName: String
     var posterUrl: String
     var detailedViewBannerUrl: String
+    var audiencePills: String
+    var venueMapUrl: String
 }
 
 let AuthTokenString = "43376e32-b365-465f-88ce-a552783747fa"
@@ -137,7 +140,6 @@ class Network: ObservableObject {
     @Published var information = [InfoMeta]()
     @Published var events = [EventMeta]()
     @Published var sundayService = [SundayServiceMeta]()
-    
     
     func getSundayService() {
         guard let url = URL(string: "https://coda.io/apis/v1/docs/t3DP5F4Tol/tables/sundayServiceInfo/rows?useColumnNames=true?valueFormat=rich?limit=40") else {return}
