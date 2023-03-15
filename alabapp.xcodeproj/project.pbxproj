@@ -17,6 +17,7 @@
 		C8228AAB29AAE07900FB4FE7 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */; };
 		C8228AAD29AB0A0300FB4FE7 /* EventDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */; };
 		C85294C029B3DE0D00AECE38 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85294BF29B3DE0D00AECE38 /* Network.swift */; };
+		C8F79BE229C1657E004D5955 /* VenueMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F79BE129C1657E004D5955 /* VenueMapView.swift */; };
 		F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35329AA80CA00DDBC45 /* alabappApp.swift */; };
 		F625B35629AA80CA00DDBC45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F625B35529AA80CA00DDBC45 /* ContentView.swift */; };
 		F625B35829AA80CC00DDBC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F625B35729AA80CC00DDBC45 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailedView.swift; sourceTree = "<group>"; };
 		C85294BF29B3DE0D00AECE38 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		C8F79BE129C1657E004D5955 /* VenueMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueMapView.swift; sourceTree = "<group>"; };
 		F625B35029AA80CA00DDBC45 /* alabapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alabapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F625B35329AA80CA00DDBC45 /* alabappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alabappApp.swift; sourceTree = "<group>"; };
 		F625B35529AA80CA00DDBC45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				C8228AAA29AAE07900FB4FE7 /* EventCardView.swift */,
 				C82046BB29B06BDF0081BC3C /* LocationView.swift */,
 				C8228AAC29AB0A0300FB4FE7 /* EventDetailedView.swift */,
+				C8F79BE129C1657E004D5955 /* VenueMapView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				F625B35429AA80CA00DDBC45 /* alabappApp.swift in Sources */,
 				00F19ECD29AB117D0010932B /* GivingIconsView.swift in Sources */,
 				F625B38A29AA820800DDBC45 /* HomeView.swift in Sources */,
+				C8F79BE229C1657E004D5955 /* VenueMapView.swift in Sources */,
 				F625B38829AA820000DDBC45 /* GiveView.swift in Sources */,
 				F625B38429AA81D900DDBC45 /* EventsView.swift in Sources */,
 			);
